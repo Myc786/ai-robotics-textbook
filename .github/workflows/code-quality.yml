@@ -1,0 +1,35 @@
+name: Code Quality Checks
+
+on:
+  pull_request:
+    branches:
+      - main
+  push:
+    branches:
+      - main
+
+jobs:
+  lint-and-test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+          cache: npm
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Check build
+        run: npm run build
+
+      - name: Run linting (if configured)
+        run: |
+          if [ -f "node_modules/.bin/eslint" ]; then
+            npm run lint
+          else
+            echo "ESLint not configured, skipping linting"
+          fi

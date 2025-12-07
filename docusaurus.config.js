@@ -9,15 +9,15 @@ const config = {
   favicon: 'img/favicon.ico',
 
   // Set the production url of your site here
-  url: 'https://your-docusaurus-site.example.com',
+  url: 'https://Myc786.github.io',  // Your GitHub username
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub Pages deployment, it is often '/<projectName>/'
-  baseUrl: '/',
+  baseUrl: '/ai-robotics-textbook/',  // Matches your repository name
 
   // GitHub pages deployment config.
   // If you aren't using GitHub Pages, you don't need these.
-  organizationName: 'facebook',
-  projectName: 'docusaurus',
+  organizationName: 'Myc786',  // Your GitHub username/organization
+  projectName: 'ai-robotics-textbook',  // Keep this as your repository name
 
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
@@ -37,14 +37,14 @@ const config = {
       ({
         docs: {
           sidebarPath: require.resolve('./sidebars.js'),
-          // Please change this to your repo.  // Remove this to remove the "edit this page" links.
+          // Change this to your repository URL to enable the "edit this page" links
           editUrl:
-            'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
+            'https://github.com/Myc786/ai-robotics-textbook/edit/main/',
         },
         blog: {  showReadingTime: true,
-          // Please change this to your repo.  // Remove this to remove the "edit this page" links.
+          // Change this to your repository URL to enable the "edit this page" links
           editUrl:
-            'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
+            'https://github.com/Myc786/ai-robotics-textbook/edit/main/',
         },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
@@ -56,8 +56,8 @@ const config = {
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
-      // Replace with your project's social card
-      image: 'img/docusaurus-social-card.jpg',
+      // Social card image for sharing
+      image: 'img/physical-ai-social-card.jpg',  // Update this with your actual social card
       navbar: {
         title: 'Physical AI & Humanoid Robotics',
         logo: {
@@ -77,7 +77,7 @@ const config = {
             position: 'left',
           },
           {
-            href: 'https://github.com/facebook/docusaurus',
+            href: 'https://github.com/Myc786/ai-robotics-textbook',
             label: 'GitHub',
             position: 'right',
           },

@@ -33,13 +33,13 @@ function HomepageHeader() {
 
         <div className="margin-top--lg">
           <Link
-            className="button button--lg"
+            className="button button--lg button--primary"
             to="/docs/intro">
             Get Started with Textbook
           </Link>
 
           <Link
-            className="button button--lg ml-4"
+            className="button button--lg button--secondary margin-left--md"
             to="/rag-chat">
             Try RAG Chatbot
           </Link>
@@ -92,6 +92,37 @@ export default function Home() {
             </p>
           </div>
         </div>
+
+        <section className="padding-vert--lg">
+          <div className="container">
+            <div className="row">
+              <div className="col col--3">
+                <div className="text--center padding-horiz--md">
+                  <h2 className="hero__title">6</h2>
+                  <p className="text-lg">Comprehensive Chapters</p>
+                </div>
+              </div>
+              <div className="col col--3">
+                <div className="text--center padding-horiz--md">
+                  <h2 className="hero__title">20+</h2>
+                  <p className="text-lg">Code Examples</p>
+                </div>
+              </div>
+              <div className="col col--3">
+                <div className="text--center padding-horiz--md">
+                  <h2 className="hero__title">50+</h2>
+                  <p className="text-lg">Exercises & Projects</p>
+                </div>
+              </div>
+              <div className="col col--3">
+                <div className="text--center padding-horiz--md">
+                  <h2 className="hero__title">AI</h2>
+                  <p className="text-lg">Powered Q&A System</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
 
         <HomepageFeatures />
 

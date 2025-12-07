@@ -62,11 +62,49 @@ The textbook covers these key areas:
 
 ## RAG Chatbot
 
-The integrated RAG chatbot is accessible at `/rag-chat`. It uses a simple search-based approach to find relevant content in the textbook and generate contextually appropriate responses.
+The integrated RAG chatbot is accessible at `/rag-chat`. It uses a semantic search-based approach to find relevant content in the textbook and generate contextually appropriate responses with source citations.
 
-For the chatbot to work locally, make sure to run both:
-- Frontend: `npm start` (runs on http://localhost:3000)
-- Backend: `cd RAG-backend && python main.py` (runs on http://localhost:8000)
+For the chatbot to work locally, you need to run both the frontend and backend:
+
+### Development Setup
+
+1. **Start the RAG backend server:**
+   ```bash
+   cd RAG-backend
+   pip install -r requirements.txt
+   python main.py
+   ```
+   The backend will be available at http://localhost:8000
+
+2. **In a separate terminal, start the Docusaurus frontend:**
+   ```bash
+   npm start
+   ```
+   The frontend will be available at http://localhost:3000
+
+3. **Access the chatbot:**
+   Visit http://localhost:3000/rag-chat to use the RAG chatbot
+
+### Production Deployment
+
+When deployed to GitHub Pages, the backend must be hosted separately. For full functionality in production:
+
+1. Deploy the RAG backend to a cloud service (Heroku, Render, VPS, etc.)
+2. Update the backend URL in `src/components/Chatbot/index.js` to point to your deployed backend
+3. Configure CORS settings to allow requests from your GitHub Pages domain
+
+### API Documentation
+
+The backend provides the following endpoints:
+- `POST /api/v1/query` - Process a query against the textbook content
+- `GET /health` - Check backend health status
+
+Example query:
+```json
+{
+  "query": "What is Physical AI?"
+}
+```
 
 ## Deployment
 

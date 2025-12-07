@@ -1,3 +1,8 @@
+---
+sidebar_label: 'Capstone: Simple AI Robot Pipeline'
+sidebar_position: 7
+---
+
 # Capstone: Simple AI-Robot Pipeline
 
 ## Introduction to the Capstone Project

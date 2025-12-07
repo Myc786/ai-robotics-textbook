@@ -1,3 +1,8 @@
+---
+sidebar_label: 'Digital Twin Simulation'
+sidebar_position: 5
+---
+
 # Digital Twin Simulation (Gazebo + Isaac)
 
 ## Introduction to Digital Twin Simulation

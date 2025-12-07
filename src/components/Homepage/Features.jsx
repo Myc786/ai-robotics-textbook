@@ -11,7 +11,7 @@ const FeatureList = [
       </>
     ),
     buttonLabel: 'Explore Physical AI',
-    to: '/docs/introduction-to-physical-ai',
+    to: '/docs/1-introduction-to-physical-ai',
   },
   {
     title: 'Humanoid Robotics',
@@ -21,7 +21,7 @@ const FeatureList = [
       </>
     ),
     buttonLabel: 'Learn Robotics',
-    to: '/docs/basics-of-humanoid-robotics',
+    to: '/docs/2-basics-of-humanoid-robotics',
   },
   {
     title: 'ROS 2 Fundamentals',
@@ -31,7 +31,7 @@ const FeatureList = [
       </>
     ),
     buttonLabel: 'Get Started',
-    to: '/docs/ros2-fundamentals',
+    to: '/docs/3-ros2-fundamentals',
   },
   {
     title: 'Vision-Language-Action',
@@ -41,7 +41,7 @@ const FeatureList = [
       </>
     ),
     buttonLabel: 'Discover VLA',
-    to: '/docs/vision-language-action-systems',
+    to: '/docs/5-vision-language-action-systems',
   },
   {
     title: 'Digital Twin Simulation',
@@ -51,7 +51,7 @@ const FeatureList = [
       </>
     ),
     buttonLabel: 'Try Simulation',
-    to: '/docs/digital-twin-simulation',
+    to: '/docs/4-digital-twin-simulation',
   },
   {
     title: 'Capstone Projects',
@@ -61,7 +61,7 @@ const FeatureList = [
       </>
     ),
     buttonLabel: 'View Projects',
-    to: '/docs/capstone-simple-ai-robot-pipeline',
+    to: '/docs/6-capstone-simple-ai-robot-pipeline',
   },
 ];
 

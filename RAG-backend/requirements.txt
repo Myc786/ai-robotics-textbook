@@ -6,3 +6,4 @@ psycopg2-binary~=2.9.9
 python-dotenv~=1.0.0  # For local environment variables
 pydantic-settings~=2.0.0  # For better settings management
 cryptography~=41.0.0  # For security-related operations
+requests~=2.31.0  # For testing the backend

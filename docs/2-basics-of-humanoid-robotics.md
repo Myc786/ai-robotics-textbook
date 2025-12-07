@@ -1,3 +1,8 @@
+---
+sidebar_label: 'Basics of Humanoid Robotics'
+sidebar_position: 3
+---
+
 # Basics of Humanoid Robotics
 
 ## Anatomy of Humanoid Robots

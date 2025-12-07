@@ -1,3 +1,8 @@
+---
+sidebar_label: 'Introduction to Physical AI'
+sidebar_position: 2
+---
+
 # Introduction to Physical AI
 
 ## What is Physical AI?

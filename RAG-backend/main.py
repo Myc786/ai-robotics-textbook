@@ -1,6 +1,7 @@
 # RAG-backend/main.py
 
 from fastapi import FastAPI, HTTPException
+from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 from typing import List, Dict, Optional
 import os
@@ -8,6 +9,15 @@ import glob
 import re
 
 app = FastAPI()
+
+# Add CORS middleware to allow requests from any origin
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],  # In production, replace with your specific frontend URL
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 class QueryRequest(BaseModel):
     query: str
@@ -31,10 +41,21 @@ def load_textbook_content():
                 lines = content.split('\n')
                 title = lines[0].replace('#', '').strip() if lines else "Unknown Chapter"
 
+                # Use the new URL format with numbered prefixes
+                doc_name = filename.replace(".md", "")
+                # For the URL path, convert number-prefixed files to Docusaurus format
+                # Docusaurus removes the numeric prefixes for the URLs
+                if doc_name.startswith(('1-', '2-', '3-', '4-', '5-', '6-')):
+                    # Remove the numeric prefix for the URL (e.g., "1-introduction-to-physical-ai" -> "introduction-to-physical-ai")
+                    url_path = f'/docs/{doc_name.split("-", 1)[1]}'  # Remove the number prefix
+                else:
+                    # For intro.md and other special docs
+                    url_path = f'/docs/{doc_name}'
+
                 content_dict[filename] = {
                     'title': title,
                     'content': content,
-                    'url': f'/docs/{filename.replace(".md", "")}'
+                    'url': url_path
                 }
         except Exception as e:
             print(f"Error reading {file_path}: {e}")

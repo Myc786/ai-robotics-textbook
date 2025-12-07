@@ -231,6 +231,11 @@ body {
   will-change: transform;
 }
 
+/* Homepage Specific Card Styling */
+.hero .button {
+  margin-right: 1rem;
+}
+
 /* ============================================
    BUTTONS - 3D Holographic Buttons
    ============================================ */

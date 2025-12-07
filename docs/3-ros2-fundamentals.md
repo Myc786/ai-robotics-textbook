@@ -1,3 +1,8 @@
+---
+sidebar_label: 'ROS 2 Fundamentals'
+sidebar_position: 4
+---
+
 # ROS 2 Fundamentals
 
 ## Introduction to ROS 2

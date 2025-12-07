@@ -1,3 +1,8 @@
+---
+sidebar_label: 'Vision-Language-Action Systems'
+sidebar_position: 6
+---
+
 # Vision-Language-Action Systems
 
 ## Overview of Vision-Language-Action Systems

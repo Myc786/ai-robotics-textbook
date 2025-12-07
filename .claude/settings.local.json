@@ -1,0 +1,13 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(netstat -ano)",
+      "Bash(taskkill /f /pid 872)",
+      "Bash(npm install -D tailwindcss postcss autoprefixer)",
+      "Bash(npx docusaurus start)",
+      "Bash(findstr :3000)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}

@@ -46,8 +46,10 @@ function Chatbot() {
       }
 
       const data = await res.json();
+      console.log('Chat response:', data); // Debug logging
       setResponse(data);
     } catch (err) {
+      console.error('Chat error:', err); // Debug logging
       // Provide a more informative message about deployment configuration
       if (err.message.includes('CORS') || err.message.includes('Failed to fetch')) {
         setError(
@@ -60,8 +62,22 @@ function Chatbot() {
           '3. The backend is running but on a different port. Verify it\'s on port 8000.\n\n' +
           'For local development, ensure the FastAPI server is running on port 8000 before testing.'
         );
+      } else if (err.message.includes('404') || err.message.includes('not found')) {
+        setError(
+          'Chat API endpoint not found. The backend might not be properly deployed or the API endpoint may have changed.\n\n' +
+          'Current backend URL: ' + backendBaseUrl + '\n' +
+          'Expected endpoint: ' + RAG_BACKEND_URL + '\n\n' +
+          'Please verify that the backend service is properly deployed and accessible.'
+        );
+      } else if (err.message.includes('500') || err.message.includes('error')) {
+        setError(
+          'Backend server error. The RAG service may not be properly configured.\n\n' +
+          'Error details: ' + err.message + '\n\n' +
+          'This could be due to missing environment variables (API keys) or missing indexed data.\n' +
+          'Check that the backend has proper API keys configured and that documents have been indexed.'
+        );
       } else {
-        setError(err.message);
+        setError('Error: ' + err.message);
       }
     } finally {
       setLoading(false);
@@ -98,9 +114,33 @@ function Chatbot() {
       {response && (
         <div className={styles.responseContainer}>
           <div className={styles.responseContent}>
-            <div className={styles.responseText} style={{color: 'black', backgroundColor: 'white', padding: '10px', borderRadius: '4px'}}>
-              <pre style={{whiteSpace: 'pre-wrap', wordWrap: 'break-word', fontFamily: 'inherit', margin: 0, color: 'black', backgroundColor: 'white'}}>{response.response}</pre>
-            </div>
+            {response.response ? (
+              <div className={styles.responseText}>
+                <pre style={{whiteSpace: 'pre-wrap', wordWrap: 'break-word', fontFamily: 'inherit', margin: 0, color: 'black', backgroundColor: 'white', padding: '10px', borderRadius: '4px'}}>{response.response}</pre>
+              </div>
+            ) : (
+              <div className={styles.responseText}>
+                <pre style={{whiteSpace: 'pre-wrap', wordWrap: 'break-word', fontFamily: 'inherit', margin: 0, color: 'black', backgroundColor: 'white', padding: '10px', borderRadius: '4px'}}>No response content received from backend. Backend may not be properly configured or have indexed data.</pre>
+              </div>
+            )}
+            {response.retrieved_chunks && response.retrieved_chunks.length > 0 && (
+              <div className={styles.sourcesSection}>
+                <h4>Sources:</h4>
+                <div className={styles.sourcesList}>
+                  {response.retrieved_chunks.slice(0, 3).map((chunk, index) => (
+                    <div key={index} className={styles.sourceItem}>
+                      <span className={styles.sourceFile}>{chunk.chapter || chunk.url || `Source ${index + 1}`}</span>
+                      <span className={styles.sourceScore}>{chunk.score?.toFixed(3) || 'N/A'}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
+            {response.execution_time_ms && (
+              <div className={styles.performanceInfo}>
+                <small>Response time: {response.execution_time_ms}ms</small>
+              </div>
+            )}
           </div>
         </div>
       )}

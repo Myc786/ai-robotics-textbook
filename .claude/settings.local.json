@@ -65,7 +65,14 @@
       "Bash(dir *.lock)",
       "Bash(findstr npm)",
       "Bash(npm install @docusaurus/core)",
-      "Bash(git add -A)"
+      "Bash(git add -A)",
+      "Bash(git pull origin main)",
+      "Bash(git push origin main)",
+      "Bash(git commit -m \"Configure GitHub Pages deployment for Docusaurus frontend\n\n- Update docusaurus.config.js with GitHub Pages settings\n- Set proper organization name, project name, and base URL\n- Update URL to GitHub Pages format\n- Update copyright notice\n\n🤖 Generated with [Claude Code](https://claude.com/claude-code)\n\nCo-Authored-By: Claude Sonnet 4.5 <noreply@anthropic.com>\")",
+      "Bash(git add docusaurus.config.js .env history/prompts/general/3-configure-backend-render-url.general.prompt.md)",
+      "Bash(git commit -m \"Configure backend URL for Render deployment\n\n- Update docusaurus.config.js to use Render backend URL as default\n- Set NEXT_PUBLIC_RAG_BACKEND_URL to https://rag-chatbot-2ufj.onrender.com\n- Maintain environment variable override capability\n\n🤖 Generated with [Claude Code](https://claude.com/claude-code)\n\nCo-Authored-By: Claude Sonnet 4.5 <noreply@anthropic.com>\")",
+      "Bash(git add \"RAG-Backend/BACKEND_SETUP_GUIDE.md\")",
+      "Bash(git add \"RAG-Backend/README.md\")"
     ],
     "deny": [],
     "ask": []

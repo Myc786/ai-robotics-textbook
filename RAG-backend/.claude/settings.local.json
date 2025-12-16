@@ -8,7 +8,9 @@
       "Bash(python -m pytest:*)",
       "Bash(git rev-parse --git-dir)",
       "Bash(python -c \"import src.main; print(''Application imports successfully'')\")",
-      "Bash(python -c \"import src.models.document; print(''Models imported successfully'')\")"
+      "Bash(python -c \"import src.models.document; print(''Models imported successfully'')\")",
+      "Bash(claude mcp remove github)",
+      "Bash(gh repo create RAG-Backend --public --description \"RAG Backend for textbook chatbot application\" --confirm)"
     ]
   }
 }

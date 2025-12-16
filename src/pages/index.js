@@ -56,7 +56,7 @@ const chapters = [
     title: "Introduction to Physical AI",
     description: "Understanding intelligent systems that interact with the physical world through sensors and actuators",
     icon: "🤖",
-    link: "/docs/1-introduction-to-physical-ai.md"
+    link: "/docs/1-introduction-to-physical-ai"
   },
   {
     id: 2,

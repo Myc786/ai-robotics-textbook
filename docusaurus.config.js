@@ -9,15 +9,15 @@ const config = {
   favicon: 'img/favicon.ico',
 
   // Set the production url of your site here
-  url: 'https://Myc786.github.io',  // GitHub Pages URL
+  url: 'https://ai-robotics-textbook.vercel.app',  // Vercel deployment URL
   // Set the /<baseUrl>/ pathname under which your site is served
-  // For GitHub Pages deployment, use '/<repository-name>/'
-  baseUrl: '/ai-robotics-textbook/',  // Base URL for GitHub Pages
+  // For root deployment on Vercel, use '/'
+  baseUrl: '/',  // Root base URL for Vercel
 
   // GitHub pages deployment config.
   // If you aren't using GitHub Pages, you don't need these.
-  organizationName: 'Myc786',  // Your GitHub username/organization
-  projectName: 'ai-robotics-textbook',  // Keep this as your repository name
+  // organizationName: 'Myc786',  // Your GitHub username/organization
+  // projectName: 'ai-robotics-textbook',  // Keep this as your repository name
 
   onBrokenLinks: 'ignore',
   onBrokenMarkdownLinks: 'ignore',
@@ -128,7 +128,7 @@ const config = {
             ],
           },
         ],
-        copyright: `Copyright © ${new Date().getFullYear()} AI Robotics Textbook. Built with Docusaurus.`,
+        copyright: `Copyright © ${new Date().getFullYear()} My Project, Inc. Built with Docusaurus.`,
       },
       prism: {
         theme: lightCodeTheme,

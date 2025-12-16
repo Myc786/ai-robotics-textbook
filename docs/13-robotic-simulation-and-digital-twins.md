@@ -1,7 +1,6 @@
 ---
 sidebar_label: 'Robotic Simulation and Digital Twins'
 sidebar_position: 14
-slug: /docs/13-robotic-simulation-and-digital-twins
 ---
 
 # Robotic Simulation and Digital Twins

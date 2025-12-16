@@ -1,7 +1,6 @@
 ---
 sidebar_label: 'Advanced Control Systems'
 sidebar_position: 8
-slug: /docs/7-advanced-control-systems
 ---
 
 # Advanced Control Systems

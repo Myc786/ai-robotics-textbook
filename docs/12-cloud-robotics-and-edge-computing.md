@@ -1,7 +1,6 @@
 ---
 sidebar_label: 'Cloud Robotics and Edge Computing'
 sidebar_position: 13
-slug: /docs/12-cloud-robotics-and-edge-computing
 ---
 
 # Cloud Robotics and Edge Computing

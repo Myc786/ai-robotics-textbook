@@ -1,7 +1,6 @@
 ---
 sidebar_label: 'Sensor Fusion and Perception'
 sidebar_position: 10
-slug: /docs/9-sensor-fusion-and-perception
 ---
 
 # Sensor Fusion and Perception

@@ -153,7 +153,7 @@ function RagChat() {
 
           <div className="row">
             <div className="col col--3">
-              <Link to="/docs/1-introduction-to-physical-ai" className="card" style={{
+              <Link to="/docs/introduction-to-physical-ai" className="card" style={{
                 height: '100%',
                 display: 'flex',
                 flexDirection: 'column',
@@ -174,7 +174,7 @@ function RagChat() {
               </Link>
             </div>
             <div className="col col--3">
-              <Link to="/docs/2-basics-of-humanoid-robotics" className="card" style={{
+              <Link to="/docs/basics-of-humanoid-robotics" className="card" style={{
                 height: '100%',
                 display: 'flex',
                 flexDirection: 'column',
@@ -195,7 +195,7 @@ function RagChat() {
               </Link>
             </div>
             <div className="col col--3">
-              <Link to="/docs/5-vision-language-action-systems" className="card" style={{
+              <Link to="/docs/vision-language-action-systems" className="card" style={{
                 height: '100%',
                 display: 'flex',
                 flexDirection: 'column',
@@ -216,7 +216,7 @@ function RagChat() {
               </Link>
             </div>
             <div className="col col--3">
-              <Link to="/docs/7-advanced-control-systems" className="card" style={{
+              <Link to="/docs/advanced-control-systems" className="card" style={{
                 height: '100%',
                 display: 'flex',
                 flexDirection: 'column',

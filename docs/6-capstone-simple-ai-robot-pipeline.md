@@ -1,7 +1,6 @@
 ---
 sidebar_label: 'Capstone: Simple AI Robot Pipeline'
 sidebar_position: 7
-slug: /docs/6-capstone-simple-ai-robot-pipeline
 ---
 
 # Capstone: Simple AI-Robot Pipeline

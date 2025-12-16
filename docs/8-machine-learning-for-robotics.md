@@ -1,7 +1,6 @@
 ---
 sidebar_label: 'Machine Learning for Robotics'
 sidebar_position: 9
-slug: /docs/8-machine-learning-for-robotics
 ---
 
 # Machine Learning for Robotics

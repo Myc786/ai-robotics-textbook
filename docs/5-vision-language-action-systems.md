@@ -1,7 +1,6 @@
 ---
 sidebar_label: 'Vision-Language-Action Systems'
 sidebar_position: 6
-slug: /docs/5-vision-language-action-systems
 ---
 
 # Vision-Language-Action Systems

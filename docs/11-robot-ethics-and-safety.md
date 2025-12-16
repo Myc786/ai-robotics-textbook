@@ -1,7 +1,6 @@
 ---
 sidebar_label: 'Robot Ethics and Safety'
 sidebar_position: 12
-slug: /docs/11-robot-ethics-and-safety
 ---
 
 # Robot Ethics and Safety

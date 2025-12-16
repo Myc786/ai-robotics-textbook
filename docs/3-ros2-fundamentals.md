@@ -1,7 +1,6 @@
 ---
 sidebar_label: 'ROS 2 Fundamentals'
 sidebar_position: 4
-slug: /docs/3-ros2-fundamentals
 ---
 
 # ROS 2 Fundamentals

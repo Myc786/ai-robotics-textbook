@@ -1,7 +1,6 @@
 ---
 sidebar_label: 'Human-Robot Interaction'
 sidebar_position: 11
-slug: /docs/10-human-robot-interaction
 ---
 
 # Human-Robot Interaction

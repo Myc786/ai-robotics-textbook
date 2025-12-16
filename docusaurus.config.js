@@ -19,8 +19,8 @@ const config = {
   // organizationName: 'Myc786',  // Your GitHub username/organization
   // projectName: 'ai-robotics-textbook',  // Keep this as your repository name
 
-  onBrokenLinks: 'ignore',
-  onBrokenMarkdownLinks: 'ignore',
+  onBrokenLinks: 'warn',
+  onBrokenMarkdownLinks: 'warn',
 
   // Even if you don't use internationalization, you can use this field to set useful
   // metadata like html lang. For example, if your site is Chinese, you may want

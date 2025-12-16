@@ -1,95 +1,125 @@
-# RAG Backend for Physical AI & Humanoid Robotics Textbook
+# RAG Chatbot for AI-Native Published Book
 
-This is a FastAPI-based RAG (Retrieval-Augmented Generation) backend that enables Q&A functionality for the Physical AI & Humanoid Robotics textbook.
+This is a Retrieval-Augmented Generation (RAG) chatbot that answers user questions strictly using the published book content, following zero hallucination principles.
+
+## Architecture
+
+The system follows a retrieval-first approach with the following components:
+
+- **Backend**: FastAPI application
+- **Embeddings**: Cohere for generating text embeddings
+- **Vector Database**: Qdrant Cloud for similarity search
+- **Metadata Store**: Neon Serverless Postgres for document metadata
+- **Agent Framework**: OpenAI Agents SDK for response generation
 
 ## Features
 
-- Semantic search through textbook content
-- Context-aware responses based on textbook chapters
-- Source attribution for all answers
-- Special handling for specific AI/Robotics topics
+- Zero hallucination: Answers only from retrieved book content
+- Support for full-book and selected-text-only queries
+- Context sufficiency evaluation
+- Source attribution for all responses
+- Document management (upload, indexing, deletion)
 
-## Prerequisites
+## Project Structure
 
-- Python 3.8+
-- pip (Python package manager)
+```
+backend/
+├── src/
+│   ├── models/          # Data models and schemas
+│   ├── services/        # Business logic and service layers
+│   ├── api/            # API endpoints and routes
+│   ├── core/           # Configuration and core utilities
+│   └── utils/          # Helper functions and utilities
+├── tests/              # Test files
+├── requirements.txt    # Python dependencies
+└── alembic/            # Database migrations
+```
 
-## Installation
+## Environment Setup
 
-1. Navigate to the RAG-backend directory:
-   ```bash
-   cd RAG-backend
-   ```
+1. Create a `.env` file based on `.env.example`:
+```bash
+cp .env.example .env
+```
 
-2. Install dependencies:
-   ```bash
-   pip install -r requirements.txt
-   ```
+2. Fill in your API keys and connection details in `.env`
 
-## Running the Server
+## Running the Application
 
-1. Start the RAG server:
-   ```bash
-   python main.py
-   ```
+1. Install dependencies:
+```bash
+pip install -r requirements.txt
+```
 
-2. The server will start at: `http://localhost:8000`
+2. Run database migrations:
+```bash
+alembic upgrade head
+```
 
-3. Verify the server is running by visiting: `http://localhost:8000/health`
+3. Start the development server:
+```bash
+uvicorn src.main:app --reload --host 0.0.0.0 --port 8000
+```
+
+The application will be available at `http://localhost:8000`
 
 ## API Endpoints
 
-- `POST /api/v1/query` - Query the RAG system
-- `GET /health` - Health check endpoint
+### Chat
+- `POST /api/v1/chat` - Process a user query using the RAG system
 
-### Query Example
+### Documents
+- `POST /api/v1/documents` - Upload and index a document
+- `POST /api/v1/documents/file` - Upload a document file
+- `GET /api/v1/documents/{id}` - Get document information
+- `DELETE /api/v1/documents/{id}` - Delete a document
 
-```json
-{
-  "query": "What is Physical AI?"
-}
+## Testing
+
+Run the tests with:
+```bash
+TESTING=1 python -m pytest
 ```
 
-Response:
-```json
-{
-  "answer": "Physical AI refers to intelligent systems that interact with the physical world through sensors and actuators...",
-  "sources": [
-    {
-      "title": "Introduction to Physical AI",
-      "url": "/docs/introduction-to-physical-ai"
-    }
-  ]
-}
+## Deployment
+
+For deployment instructions, see [DEPLOYMENT.md](DEPLOYMENT.md).
+
+Quick deployment options:
+1. **Heroku**: Use the provided Procfile
+2. **Railway**: Connect your GitHub repo directly
+3. **Render**: Create a new Web Service
+4. **Docker**: Use the provided Dockerfile
+
+## Environment Variables
+
+Required environment variables for production:
+
+```env
+COHERE_API_KEY=your_cohere_api_key
+QDRANT_URL=your_qdrant_url
+QDRANT_API_KEY=your_qdrant_api_key
+DATABASE_URL=your_postgres_database_url
+```
+
+Optional variables:
+```env
+ENVIRONMENT=production
+LOG_LEVEL=INFO
+OPENAI_API_KEY=your_openai_api_key  # Optional
+ALLOWED_ORIGINS=["https://your-frontend.com"]  # For CORS
 ```
 
 ## Development
 
-During development, ensure both the backend and frontend are running:
+This project follows a spec-driven development approach with the following phases:
+1. Specification (`specs/rag-chatbot/spec.md`)
+2. Planning (`specs/rag-chatbot/plan.md`)
+3. Implementation (`src/`)
+4. Testing (`tests/`)
 
-1. Start the RAG backend server:
-   ```bash
-   python main.py
-   ```
+## Security
 
-2. In a separate terminal, start the Docusaurus frontend:
-   ```bash
-   npm start
-   ```
-
-The frontend will be available at `http://localhost:3000` and will communicate with the backend at `http://localhost:8000`.
-
-## Production Deployment
-
-For production deployment, you'll need to:
-
-1. Deploy the RAG backend to a cloud service (e.g., Heroku, Render, AWS, etc.)
-2. Update the backend URL in the frontend components to point to your deployed backend
-3. Ensure CORS settings allow requests from your frontend domain
-4. Configure your frontend to use the production backend URL
-
-## Configuration Notes
-
-- The backend automatically reads and indexes all `.md` files in the `../docs` directory
-- Document URLs are generated based on the Docusaurus documentation structure
-- The search algorithm uses keyword matching with boost factors for relevant terms
+- API keys are loaded from environment variables
+- Input validation is performed on all endpoints
+- Rate limiting should be implemented in production

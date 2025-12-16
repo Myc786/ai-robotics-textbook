@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
+import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import styles from './styles.module.css';
 
 function Chatbot() {
+  const { siteConfig = {} } = useDocusaurusContext();
   const [query, setQuery] = useState('');
   const [response, setResponse] = useState(null);
   const [loading, setLoading] = useState(false);
@@ -14,32 +16,17 @@ function Chatbot() {
     setError(null);
 
     try {
-      // Use base URL that works for both development and GitHub Pages
-      let RAG_BACKEND_URL;
-
-      // Check if we're in development or production
-      if (typeof window !== 'undefined') {
-        // Client-side: check current URL to determine backend URL
-        const currentHost = window.location.hostname;
-
-        if (currentHost === 'localhost' || currentHost === '127.0.0.1') {
-          // Local development
-          RAG_BACKEND_URL = 'http://localhost:8000/api/v1/query';
-        } else {
-          // Production (GitHub Pages) - you'll need to have your RAG backend deployed separately
-          // For now, using a placeholder - in real deployment, you'd use your actual backend URL
-          RAG_BACKEND_URL = 'https://your-production-rag-backend.com/api/v1/query';
-
-          // If you're running the backend locally while accessing the frontend from GitHub Pages,
-          // you might need to temporarily use your local IP, e.g.:
-          // RAG_BACKEND_URL = 'http://YOUR_IP_ADDRESS:8000/api/v1/query';
-        }
-      } else {
-        // Server-side rendering fallback
-        RAG_BACKEND_URL = process.env.NODE_ENV === 'production'
-          ? 'https://your-production-rag-backend.com/api/v1/query'
-          : 'http://localhost:8000/api/v1/query';
-      }
+      // Use environment variable for backend URL
+      // This allows configuration via NEXT_PUBLIC_RAG_BACKEND_URL
+      // Use multiple fallbacks to ensure availability in different environments
+      const backendBaseUrl =
+        siteConfig?.customFields?.NEXT_PUBLIC_RAG_BACKEND_URL ||
+        (typeof process !== 'undefined' && process.env?.NEXT_PUBLIC_RAG_BACKEND_URL) ||
+        window?.env?.NEXT_PUBLIC_RAG_BACKEND_URL ||
+        window?.NEXT_PUBLIC_RAG_BACKEND_URL ||
+        document?.documentElement?.getAttribute('data-rag-backend-url') ||
+        'http://localhost:8080';
+      const RAG_BACKEND_URL = `${backendBaseUrl}/api/v1/chat`;
 
       // Note: For GitHub Pages deployment, you'll need to host the RAG backend separately
       // CORS policy might block requests from GitHub Pages to localhost, so for full functionality
@@ -64,9 +51,14 @@ function Chatbot() {
       // Provide a more informative message about deployment configuration
       if (err.message.includes('CORS') || err.message.includes('Failed to fetch')) {
         setError(
-          'The RAG backend is not accessible. When deployed to GitHub Pages, ' +
-          'the backend needs to be hosted separately and configured to allow cross-origin requests. ' +
-          'For local development, ensure the FastAPI server is running on port 8000.'
+          'The RAG backend is not accessible. This is typically caused by one of the following:\n\n' +
+          '1. The backend server is not running. To start it, run in a separate terminal:\n' +
+          '   cd RAG-backend\n' +
+          '   poetry run uvicorn main:app --host 0.0.0.0 --port 8000\n\n' +
+          '2. CORS restrictions between frontend and backend. Make sure the backend allows requests ' +
+          'from the frontend origin.\n\n' +
+          '3. The backend is running but on a different port. Verify it\'s on port 8000.\n\n' +
+          'For local development, ensure the FastAPI server is running on port 8000 before testing.'
         );
       } else {
         setError(err.message);
@@ -76,9 +68,14 @@ function Chatbot() {
     }
   };
 
+  // Check if we're on localhost to provide setup instructions
+  const isLocalhost = typeof window !== 'undefined' &&
+    (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1');
+
   return (
     <div className={styles.chatbotContainer}>
-      <h2>Ask the Textbook AI</h2>
+      <h2>Textbook AI Assistant</h2>
+
       <form onSubmit={handleSubmit}>
         <input
           type="text"
@@ -88,30 +85,23 @@ function Chatbot() {
           disabled={loading}
         />
         <button type="submit" disabled={loading} className="button">
-          {loading ? 'Thinking...' : 'Ask'}
+          {loading ? 'Processing...' : 'Ask'}
         </button>
       </form>
 
-      {error && <p className={styles.error}>Error: {error}</p>}
+      {error && (
+        <div className={styles.error}>
+          <pre className={styles.errorText}>{error}</pre>
+        </div>
+      )}
 
       {response && (
         <div className={styles.responseContainer}>
-          <h3>Answer:</h3>
-          <p>{response.answer}</p>
-          {response.sources && response.sources.length > 0 && (
-            <div className={styles.sources}>
-              <h4>Sources:</h4>
-              <ul>
-                {response.sources.map((source, index) => (
-                  <li key={index}>
-                    <a href={source.url} target="_blank" rel="noopener noreferrer">
-                      {source.title}
-                    </a>
-                  </li>
-                ))}
-              </ul>
+          <div className={styles.responseContent}>
+            <div className={styles.responseText} style={{color: 'black', backgroundColor: 'white', padding: '10px', borderRadius: '4px'}}>
+              <pre style={{whiteSpace: 'pre-wrap', wordWrap: 'break-word', fontFamily: 'inherit', margin: 0, color: 'black', backgroundColor: 'white'}}>{response.response}</pre>
             </div>
-          )}
+          </div>
         </div>
       )}
     </div>

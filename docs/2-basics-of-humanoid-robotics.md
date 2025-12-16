@@ -1,6 +1,7 @@
 ---
 sidebar_label: 'Basics of Humanoid Robotics'
 sidebar_position: 3
+slug: /docs/2-basics-of-humanoid-robotics
 ---
 
 # Basics of Humanoid Robotics

@@ -1,6 +1,7 @@
 ---
 sidebar_label: 'Digital Twin Simulation'
 sidebar_position: 5
+slug: /docs/4-digital-twin-simulation
 ---
 
 # Digital Twin Simulation (Gazebo + Isaac)

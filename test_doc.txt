@@ -1,0 +1,1 @@
+This is a test document for the RAG system. Physical AI is an interdisciplinary field that combines robotics, artificial intelligence, and control theory to create intelligent systems that can interact with the physical world. This content is being used to test the document indexing functionality of the RAG system.

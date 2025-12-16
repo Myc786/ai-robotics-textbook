@@ -1,6 +1,7 @@
 ---
 sidebar_label: 'Introduction to Physical AI'
 sidebar_position: 2
+slug: /docs/1-introduction-to-physical-ai
 ---
 
 # Introduction to Physical AI

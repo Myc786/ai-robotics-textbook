@@ -1,0 +1,14 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(git fetch --all --prune)",
+      "Bash(python -c \"from src.models.database import Base; print(''SQLAlchemy models loaded successfully'')\")",
+      "Bash(set TESTING=1)",
+      "Bash(python -m pytest tests/unit/ -v)",
+      "Bash(python -m pytest:*)",
+      "Bash(git rev-parse --git-dir)",
+      "Bash(python -c \"import src.main; print(''Application imports successfully'')\")",
+      "Bash(python -c \"import src.models.document; print(''Models imported successfully'')\")"
+    ]
+  }
+}

@@ -11,17 +11,17 @@
   --primary-neon: #00f5ff;
   --secondary-neon: #ff00ff;
   --accent-neon: #7c3aed;
-  
+
   /* 3D Depth Colors */
   --surface-1: #ffffff;
   --surface-2: #f8fafc;
   --surface-3: #e2e8f0;
   --depth-shadow: rgba(0, 0, 0, 0.25);
-  
+
   /* Glass Effect */
   --glass-bg: rgba(255, 255, 255, 0.1);
   --glass-border: rgba(255, 255, 255, 0.2);
-  
+
   --ifm-font-family-base: 'Inter', system-ui, sans-serif;
 }
 
@@ -61,7 +61,7 @@ body {
   color: white;
   overflow: hidden;
   transform-style: preserve-3d;
-  box-shadow: 
+  box-shadow:
     0 20px 60px rgba(102, 126, 234, 0.4),
     inset 0 1px 0 rgba(255, 255, 255, 0.3);
 }
@@ -73,7 +73,7 @@ body {
   left: 0;
   right: 0;
   bottom: 0;
-  background: 
+  background:
     radial-gradient(circle at 20% 50%, rgba(0, 245, 255, 0.3) 0%, transparent 50%),
     radial-gradient(circle at 80% 80%, rgba(255, 0, 255, 0.3) 0%, transparent 50%);
   animation: hologramPulse 8s ease-in-out infinite;
@@ -113,13 +113,18 @@ body {
   100% { transform: translateY(50%); }
 }
 
+@keyframes float {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-10px) rotate(2deg); }
+}
+
 .hero__title {
   position: relative;
   font-size: 4rem;
   font-weight: 900;
   margin-bottom: 1.5rem;
   letter-spacing: -0.03em;
-  text-shadow: 
+  text-shadow:
     0 0 20px rgba(0, 245, 255, 0.8),
     0 0 40px rgba(0, 245, 255, 0.4),
     0 5px 15px rgba(0, 0, 0, 0.5);
@@ -130,13 +135,13 @@ body {
 
 @keyframes textGlow {
   0%, 100% {
-    text-shadow: 
+    text-shadow:
       0 0 20px rgba(0, 245, 255, 0.8),
       0 0 40px rgba(0, 245, 255, 0.4),
       0 5px 15px rgba(0, 0, 0, 0.5);
   }
   50% {
-    text-shadow: 
+    text-shadow:
       0 0 30px rgba(0, 245, 255, 1),
       0 0 60px rgba(0, 245, 255, 0.6),
       0 5px 15px rgba(0, 0, 0, 0.5);
@@ -165,7 +170,7 @@ body {
   border-radius: 20px;
   padding: 2rem;
   margin: 2rem 0;
-  box-shadow: 
+  box-shadow:
     0 8px 32px rgba(0, 0, 0, 0.1),
     0 0 0 1px rgba(255, 255, 255, 0.1) inset,
     0 20px 40px rgba(102, 126, 234, 0.15);
@@ -197,7 +202,7 @@ body {
 
 .card:hover {
   transform: translateZ(30px) translateY(-10px) rotateX(5deg);
-  box-shadow: 
+  box-shadow:
     0 20px 60px rgba(0, 0, 0, 0.2),
     0 0 0 1px rgba(0, 245, 255, 0.3) inset,
     0 30px 80px rgba(102, 126, 234, 0.3),
@@ -231,6 +236,62 @@ body {
   will-change: transform;
 }
 
+/* Chapter Grid Card Specific Styles */
+.card .card__header h3 {
+  color: #667eea;
+  background: linear-gradient(135deg, #667eea, #764ba2, #00f5ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  filter: drop-shadow(0 4px 10px rgba(102, 126, 234, 0.3));
+  margin-bottom: 1rem;
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+.card .card__footer .button {
+  margin: 0;
+  padding: 0.5rem 1.5rem;
+  font-size: 0.875rem;
+}
+
+/* Homepage Card Grid Specific Styling */
+.homepage-card-grid {
+  margin: 0 -1rem;
+}
+
+.homepage-card-grid .col {
+  padding: 0 1rem;
+}
+
+/* Responsive adjustments for chapter grid */
+@media (max-width: 996px) {
+  .homepage-card-grid .col {
+    padding: 0 0.75rem;
+    margin-bottom: 1rem;
+  }
+
+  .card .card__header h3 {
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .homepage-card-grid .col {
+    padding: 0 0.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .card {
+    margin: 1rem 0;
+    padding: 1.5rem;
+  }
+
+  .card .card__header h3 {
+    font-size: 1rem;
+  }
+}
+
 /* Homepage Specific Card Styling */
 .hero .button {
   margin-right: 1rem;
@@ -247,7 +308,7 @@ body {
   border-radius: 12px;
   background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
   color: white;
-  box-shadow: 
+  box-shadow:
     0 4px 15px rgba(102, 126, 234, 0.4),
     0 0 0 1px rgba(255, 255, 255, 0.1) inset;
   transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
@@ -269,7 +330,7 @@ body {
 
 .button:hover {
   transform: translateZ(10px) translateY(-5px);
-  box-shadow: 
+  box-shadow:
     0 10px 30px rgba(102, 126, 234, 0.6),
     0 0 0 1px rgba(0, 245, 255, 0.5) inset,
     0 0 30px rgba(0, 245, 255, 0.4);
@@ -282,7 +343,7 @@ body {
 
 .button:active {
   transform: translateZ(5px) translateY(-2px);
-  box-shadow: 
+  box-shadow:
     0 5px 15px rgba(102, 126, 234, 0.4),
     0 0 0 1px rgba(0, 245, 255, 0.3) inset;
 }
@@ -295,7 +356,7 @@ body {
   backdrop-filter: blur(20px) saturate(180%);
   -webkit-backdrop-filter: blur(20px) saturate(180%);
   border-bottom: 1px solid var(--glass-border);
-  box-shadow: 
+  box-shadow:
     0 8px 32px rgba(0, 0, 0, 0.1),
     0 0 0 1px rgba(255, 255, 255, 0.1) inset;
   position: sticky;
@@ -377,7 +438,7 @@ body {
   border-left-color: #00f5ff;
   font-weight: 600;
   color: #00f5ff;
-  box-shadow: 
+  box-shadow:
     0 4px 20px rgba(0, 245, 255, 0.3),
     0 0 0 1px rgba(0, 245, 255, 0.2) inset;
   transform: translateX(5px) translateZ(5px);
@@ -390,7 +451,7 @@ div[class^='codeBlockContainer'] {
   position: relative;
   border-radius: 16px;
   overflow: hidden;
-  box-shadow: 
+  box-shadow:
     0 10px 40px rgba(0, 0, 0, 0.3),
     0 0 0 1px rgba(0, 245, 255, 0.2) inset;
   margin: 2rem 0;
@@ -400,7 +461,7 @@ div[class^='codeBlockContainer'] {
 
 div[class^='codeBlockContainer']:hover {
   transform: translateZ(20px) translateY(-5px);
-  box-shadow: 
+  box-shadow:
     0 20px 60px rgba(0, 0, 0, 0.4),
     0 0 0 1px rgba(0, 245, 255, 0.4) inset,
     0 0 40px rgba(0, 245, 255, 0.2);
@@ -594,11 +655,11 @@ tr:hover {
 }
 
 @keyframes pulse3d {
-  0%, 100% { 
+  0%, 100% {
     transform: scale(1) translateZ(0);
     box-shadow: 0 0 0 0 rgba(0, 245, 255, 0.7);
   }
-  50% { 
+  50% {
     transform: scale(1.05) translateZ(10px);
     box-shadow: 0 0 20px 10px rgba(0, 245, 255, 0);
   }
@@ -625,21 +686,33 @@ input[type="text"]:focus {
 }
 
 /* ============================================
+   HOMEPAGE FEATURES
+   ============================================ */
+.feature-preview {
+  font-size: 0.9rem;
+  line-height: 1.5;
+  color: #94a3b8;
+  margin-top: 0.75rem;
+  padding-top: 0.75rem;
+  border-top: 1px solid var(--glass-border);
+}
+
+/* ============================================
    RESPONSIVE
    ============================================ */
 @media (max-width: 996px) {
   .hero__title {
     font-size: 2.5rem;
   }
-  
+
   .hero__subtitle {
     font-size: 1.25rem;
   }
-  
+
   .card {
     transform: none;
   }
-  
+
   .card:hover {
     transform: translateY(-5px);
   }

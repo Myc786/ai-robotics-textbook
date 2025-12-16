@@ -49,6 +49,101 @@ function HomepageHeader() {
   );
 }
 
+// Chapter data
+const chapters = [
+  {
+    id: 1,
+    title: "Introduction to Physical AI",
+    description: "Understanding intelligent systems that interact with the physical world through sensors and actuators",
+    icon: "🤖",
+    link: "/docs/1-introduction-to-physical-ai.md"
+  },
+  {
+    id: 2,
+    title: "Basics of Humanoid Robotics",
+    description: "How humanoid robots achieve coordinated movement and control systems",
+    icon: "🦾",
+    link: "/docs/2-basics-of-humanoid-robotics"
+  },
+  {
+    id: 3,
+    title: "ROS2 Fundamentals",
+    description: "Robot communication and control using ROS 2 nodes, topics, and services",
+    icon: "📡",
+    link: "/docs/3-ros2-fundamentals"
+  },
+  {
+    id: 4,
+    title: "Digital Twin Simulation",
+    description: "Gazebo simulation and digital twin technologies for robot development",
+    icon: "🎮",
+    link: "/docs/4-digital-twin-simulation"
+  },
+  {
+    id: 5,
+    title: "Vision-Language-Action Systems",
+    description: "Integration of perception, language processing, and action execution",
+    icon: "👁️",
+    link: "/docs/5-vision-language-action-systems"
+  },
+  {
+    id: 6,
+    title: "Capstone: Simple AI Robot Pipeline",
+    description: "Bringing all concepts together in a comprehensive project",
+    icon: "🏁",
+    link: "/docs/6-capstone-simple-ai-robot-pipeline"
+  },
+  {
+    id: 7,
+    title: "Advanced Control Systems",
+    description: "Modern control methodologies for precise and adaptive robot behavior",
+    icon: "⚙️",
+    link: "/docs/7-advanced-control-systems"
+  },
+  {
+    id: 8,
+    title: "Machine Learning for Robotics",
+    description: "AI techniques applied to perception, control, planning, and decision-making",
+    icon: "🧠",
+    link: "/docs/8-machine-learning-for-robotics"
+  },
+  {
+    id: 9,
+    title: "Sensor Fusion and Perception",
+    description: "Combining multiple sensors to create coherent environmental understanding",
+    icon: "📡",
+    link: "/docs/9-sensor-fusion-and-perception"
+  },
+  {
+    id: 10,
+    title: "Human-Robot Interaction",
+    description: "Designing effective and intuitive human-robot collaboration systems",
+    icon: "🤝",
+    link: "/docs/10-human-robot-interaction"
+  },
+  {
+    id: 11,
+    title: "Robot Ethics and Safety",
+    description: "Ethical considerations and safety measures in robotic systems",
+    icon: "⚖️",
+    link: "/docs/11-robot-ethics-and-safety"
+  },
+  {
+    id: 12,
+    title: "Cloud Robotics and Edge Computing",
+    description: "Leveraging cloud and edge computing for enhanced robotic capabilities",
+    icon: "☁️",
+    link: "/docs/12-cloud-robotics-and-edge-computing"
+  },
+  {
+    id: 13,
+    title: "Robotic Simulation and Digital Twins",
+    description: "Advanced simulation and digital twin technologies for robot development",
+    icon: "🔮",
+    link: "/docs/13-robotic-simulation-and-digital-twins"
+  }
+];
+
 export default function Home() {
   const { siteConfig } = useDocusaurusContext();
   React.useEffect(() => {
@@ -63,8 +158,8 @@ export default function Home() {
         const centerX = rect.width / 2;
         const centerY = rect.height / 2;
 
-        const rotateX = (y - centerY) / 20; 
-        const rotateY = (x - centerX) / -20; 
+        const rotateX = (y - centerY) / 20;
+        const rotateY = (x - centerX) / -20;
 
         card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.05, 1.05, 1.05)`;
       });
@@ -98,19 +193,19 @@ export default function Home() {
             <div className="row">
               <div className="col col--3">
                 <div className="text--center padding-horiz--md">
-                  <h2 className="hero__title">6</h2>
+                  <h2 className="hero__title">13</h2>
                   <p className="text-lg">Comprehensive Chapters</p>
                 </div>
               </div>
               <div className="col col--3">
                 <div className="text--center padding-horiz--md">
-                  <h2 className="hero__title">20+</h2>
+                  <h2 className="hero__title">30+</h2>
                   <p className="text-lg">Code Examples</p>
                 </div>
               </div>
               <div className="col col--3">
                 <div className="text--center padding-horiz--md">
-                  <h2 className="hero__title">50+</h2>
+                  <h2 className="hero__title">75+</h2>
                   <p className="text-lg">Exercises & Projects</p>
                 </div>
               </div>
@@ -124,26 +219,60 @@ export default function Home() {
           </div>
         </section>
 
+        <section className="padding-vert--lg">
+          <div className="container">
+            <div className="text--center margin-bottom--xl">
+              <h2>Explore All Chapters</h2>
+              <p className="text-lg max-w-3xl mx-auto">
+                Dive deep into each topic with comprehensive learning modules
+              </p>
+            </div>
+            <div className="row">
+              {chapters.map((chapter) => (
+                <div className="col col--4 margin-bottom--lg" key={chapter.id}>
+                  <Link to={chapter.link} className="card">
+                    <div className="card__header">
+                      <h3 className="text--center">{chapter.icon} {chapter.title}</h3>
+                    </div>
+                    <div className="card__body">
+                      <p>{chapter.description}</p>
+                    </div>
+                    <div className="card__footer text--center">
+                      <button className="button button--secondary button--sm">
+                        Explore Chapter
+                      </button>
+                    </div>
+                  </Link>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
         <HomepageFeatures />
 
         <div className="container margin-vert--xl">
           <div className="row">
             <div className="col col--4 col--offset-2">
-              <div className="card">
-                <h3>Interactive Learning</h3>
-                <p>
-                  Engage with the RAG Chatbot to ask questions and get personalized responses based on the textbook content.
-                </p>
-              </div>
+              <Link to="/rag-chat" className="card">
+                <div className="card__body text--center padding--lg">
+                  <h3>Interactive Learning</h3>
+                  <p>
+                    Engage with the RAG Chatbot to ask questions and get personalized responses based on the textbook content.
+                  </p>
+                </div>
+              </Link>
             </div>
 
             <div className="col col--4">
-              <div className="card">
-                <h3>Practical Applications</h3>
-                <p>
-                  Apply concepts through hands-on exercises and capstone projects that integrate multiple AI and robotics concepts.
-                </p>
-              </div>
+              <Link to="/docs/6-capstone-simple-ai-robot-pipeline" className="card">
+                <div className="card__body text--center padding--lg">
+                  <h3>Practical Applications</h3>
+                  <p>
+                    Apply concepts through hands-on exercises and capstone projects that integrate multiple AI and robotics concepts.
+                  </p>
+                </div>
+              </Link>
             </div>
           </div>
         </div>

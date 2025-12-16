@@ -1,5 +1,7 @@
 {
   "buildCommand": "npm run build",
   "outputDirectory": "build",
-  "framework": "docusaurus"
+  "framework": "docusaurus",
+  "cleanUrls": true,
+  "trailingSlash": false
 }

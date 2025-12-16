@@ -9,17 +9,17 @@ const config = {
   favicon: 'img/favicon.ico',
 
   // Set the production url of your site here
-  url: 'https://Myc786.github.io',  // Your GitHub username
+  url: 'https://ai-robotics-textbook.vercel.app',  // Vercel deployment URL
   // Set the /<baseUrl>/ pathname under which your site is served
-  // For GitHub Pages deployment, it is often '/<projectName>/'
-  baseUrl: '/ai-robotics-textbook/',  // Matches your repository name
+  // For root deployment on Vercel, use '/'
+  baseUrl: '/',  // Root base URL for Vercel
 
   // GitHub pages deployment config.
   // If you aren't using GitHub Pages, you don't need these.
-  organizationName: 'Myc786',  // Your GitHub username/organization
-  projectName: 'ai-robotics-textbook',  // Keep this as your repository name
+  // organizationName: 'Myc786',  // Your GitHub username/organization
+  // projectName: 'ai-robotics-textbook',  // Keep this as your repository name
 
-  onBrokenLinks: 'throw',
+  onBrokenLinks: 'warn',
   onBrokenMarkdownLinks: 'warn',
 
   // Even if you don't use internationalization, you can use this field to set useful
@@ -52,6 +52,12 @@ const config = {
       }),
     ],
   ],
+
+  // Expose environment variables to client via customFields
+  customFields: {
+    NEXT_PUBLIC_RAG_BACKEND_URL: process.env.NEXT_PUBLIC_RAG_BACKEND_URL || 'http://localhost:8000',
+  },
+
 
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */

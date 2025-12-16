@@ -18,6 +18,13 @@ This textbook covers the essential concepts needed to understand and develop int
 - **Digital Twin Simulation**: Gazebo simulation and digital twin technologies
 - **Vision-Language-Action Systems**: Integration of perception, language processing, and action execution
 - **Capstone Projects**: Integration of concepts into comprehensive robotic systems
+- **Advanced Control Systems**: Modern control methodologies for robotics
+- **Machine Learning for Robotics**: AI techniques applied to robotic systems
+- **Sensor Fusion and Perception**: Combining multiple sensors for environmental understanding
+- **Human-Robot Interaction**: Designing effective human-robot collaboration
+- **Robot Ethics and Safety**: Ethical considerations and safety measures in robotics
+- **Cloud Robotics and Edge Computing**: Leveraging cloud and edge computing for robotics
+- **Robotic Simulation and Digital Twins**: Advanced simulation and digital twin technologies
 
 ### How to Use This Textbook
 
@@ -34,6 +41,13 @@ There are two primary ways to engage with this material:
 - [Digital Twin Simulation](./4-digital-twin-simulation.md): Gazebo simulation and digital twin technologies
 - [Vision-Language-Action Systems](./5-vision-language-action-systems.md): Perceiving, understanding, and acting in the world
 - [Capstone: Simple AI Robot Pipeline](./6-capstone-simple-ai-robot-pipeline.md): Bringing all concepts together
+- [Advanced Control Systems](./7-advanced-control-systems.md): Modern control methodologies for robotics
+- [Machine Learning for Robotics](./8-machine-learning-for-robotics.md): AI techniques applied to robotic systems
+- [Sensor Fusion and Perception](./9-sensor-fusion-and-perception.md): Combining multiple sensors for environmental understanding
+- [Human-Robot Interaction](./10-human-robot-interaction.md): Designing effective human-robot collaboration
+- [Robot Ethics and Safety](./11-robot-ethics-and-safety.md): Ethical considerations and safety measures in robotics
+- [Cloud Robotics and Edge Computing](./12-cloud-robotics-and-edge-computing.md): Leveraging cloud and edge computing for robotics
+- [Robotic Simulation and Digital Twins](./13-robotic-simulation-and-digital-twins.md): Advanced simulation and digital twin technologies
 
 ### Interactive Features
 

@@ -105,6 +105,16 @@ function Chatbot() {
         </button>
       </form>
 
+      {!response && !error && (
+        <div className={styles.info}>
+          <p style={{color: '#64748b', fontStyle: 'italic', textAlign: 'center', padding: '1rem', marginTop: '1rem', backgroundColor: '#f8fafc', borderRadius: '8px', border: '1px solid #e2e8f0'}}>
+            Note: This chatbot connects to a RAG (Retrieval-Augmented Generation) backend that answers questions based on the textbook content.
+            The backend requires proper configuration with API keys and indexed content to function.
+            If you see error messages, please check the backend setup instructions.
+          </p>
+        </div>
+      )}
+
       {error && (
         <div className={styles.error}>
           <pre className={styles.errorText}>{error}</pre>

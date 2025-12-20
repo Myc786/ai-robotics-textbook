@@ -1,0 +1,62 @@
+# API Contract: RAG Retrieval Service
+
+## Endpoints
+
+### POST /retrieve
+**Description**: Perform semantic search on book content
+
+#### Request
+```json
+{
+  "query": "string (required) - The search query text",
+  "top_k": "integer (optional, default: 10) - Number of results to return",
+  "min_similarity": "float (optional, default: 0.75) - Minimum similarity threshold"
+}
+```
+
+#### Response (200 OK)
+```json
+{
+  "query": "string - The original query text",
+  "results": [
+    {
+      "text": "string - The retrieved text content",
+      "similarity_score": "float - Cosine similarity score",
+      "source_url": "string - URL of the source document",
+      "page_title": "string - Title of the source page",
+      "chunk_index": "integer - Index of the chunk in original document"
+    }
+  ],
+  "execution_time": "float - Time taken in seconds"
+}
+```
+
+#### Error Responses
+- **400 Bad Request**: Invalid request parameters
+- **500 Internal Server Error**: Search service unavailable
+
+#### Example Request
+```json
+{
+  "query": "Explain neural network architectures",
+  "top_k": 5,
+  "min_similarity": 0.75
+}
+```
+
+#### Example Response
+```json
+{
+  "query": "Explain neural network architectures",
+  "results": [
+    {
+      "text": "Neural networks consist of layers of interconnected nodes...",
+      "similarity_score": 0.892,
+      "source_url": "https://example.com/book/chapter3",
+      "page_title": "Neural Network Fundamentals",
+      "chunk_index": 45
+    }
+  ],
+  "execution_time": 0.45
+}
+```

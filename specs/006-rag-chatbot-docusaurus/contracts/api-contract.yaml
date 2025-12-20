@@ -1,0 +1,120 @@
+# API Contract: RAG Chatbot Widget for Docusaurus Book
+
+**Feature**: 006-rag-chatbot-docusaurus
+**Created**: 2025-12-19
+**Status**: Complete
+
+## External API Dependencies
+
+### Backend RAG API
+
+#### POST /chat
+
+**Description**: The chatbot widget sends user questions to this endpoint and receives AI-generated answers with source citations.
+
+**Request**:
+- Method: POST
+- Path: /chat (relative to backend URL)
+- Content-Type: application/json
+
+**Request Body**:
+```json
+{
+  "question": "string (required)"
+}
+```
+
+**Request Validation**:
+- `question` must be a non-empty string
+- `question` must be between 1 and 1000 characters
+
+**Response**:
+- Status: 200 OK
+- Content-Type: application/json
+
+**Response Body**:
+```json
+{
+  "answer": "string (required)",
+  "sources": ["string (required)"]
+}
+```
+
+**Response Validation**:
+- `answer` must be a non-empty string
+- `sources` must be an array of valid URLs or source identifiers
+- `sources` array must contain zero or more elements
+
+**Error Responses**:
+- 400 Bad Request: Invalid request body format
+- 422 Unprocessable Entity: Validation error in request body
+- 500 Internal Server Error: Server-side processing error
+
+**Example Request**:
+```json
+{
+  "question": "What are the key principles of humanoid robotics?"
+}
+```
+
+**Example Response**:
+```json
+{
+  "answer": "The key principles of humanoid robotics include: 1) Biomechanical design that mimics human movement patterns, 2) Advanced control systems for balance and coordination, 3) Sensory integration for environmental awareness, and 4) Cognitive systems for decision-making and interaction.",
+  "sources": [
+    "https://example.com/docs/basics-of-humanoid-robotics",
+    "https://example.com/docs/advanced-control-systems"
+  ]
+}
+```
+
+## Frontend Components
+
+### BookChatbot Component
+
+**Description**: The main React component that provides the chat interface and text selection functionality.
+
+**Props**:
+```javascript
+{
+  backendUrl: "string (required)", // The base URL for the backend API
+  initialOpenState: "boolean (optional)" // Whether the widget should start open (default: false)
+}
+```
+
+**State**:
+- `messages`: Array of chat message objects
+- `isLoading`: Boolean indicating if waiting for a response
+- `isWidgetOpen`: Boolean indicating if the chat window is open
+- `selectedText`: String of currently selected text (if any)
+
+**Methods**:
+- `sendMessage(question)`: Sends a question to the backend API
+- `toggleWidget()`: Opens or closes the chat widget
+- `handleTextSelection()`: Handles text selection events on the page
+
+## Configuration Requirements
+
+### Backend URL Configuration
+- The component must accept a configurable backend URL
+- Default value should be configurable via environment variables or relative path
+- Must support both absolute URLs and relative paths
+- Should have fallback behavior if configuration is not provided
+
+### Environment Variables
+- `REACT_APP_BACKEND_URL`: Optional environment variable for backend URL
+- `REACT_APP_CHAT_WIDGET_ENABLED`: Optional flag to enable/disable the widget
+
+## Security Requirements
+
+- All API requests must use HTTPS in production
+- No sensitive information should be logged in client-side code
+- Input validation must be performed before sending requests to backend
+- Cross-site scripting (XSS) prevention for displaying responses
+
+## Performance Requirements
+
+- Widget initialization should not delay page load by more than 100ms
+- API responses should be displayed within 10 seconds
+- Text selection detection should respond within 500ms
+- Component should have minimal impact on page performance

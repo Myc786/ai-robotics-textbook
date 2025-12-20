@@ -21,9 +21,8 @@ function Chatbot() {
       // Use multiple fallbacks to ensure availability in different environments
       const backendBaseUrl =
         siteConfig?.customFields?.NEXT_PUBLIC_RAG_BACKEND_URL ||
-        (typeof process !== 'undefined' && process.env?.NEXT_PUBLIC_RAG_BACKEND_URL) ||
-        window?.env?.NEXT_PUBLIC_RAG_BACKEND_URL ||
-        window?.NEXT_PUBLIC_RAG_BACKEND_URL ||
+        (typeof window !== 'undefined' && window?.env?.NEXT_PUBLIC_RAG_BACKEND_URL) ||
+        (typeof window !== 'undefined' && window?.NEXT_PUBLIC_RAG_BACKEND_URL) ||
         document?.documentElement?.getAttribute('data-rag-backend-url') ||
         'http://localhost:8080';
       const RAG_BACKEND_URL = `${backendBaseUrl}/api/v1/chat`;
@@ -126,11 +125,11 @@ function Chatbot() {
           <div className={styles.responseContent}>
             {response.response ? (
               <div className={styles.responseText}>
-                <pre style={{whiteSpace: 'pre-wrap', wordWrap: 'break-word', fontFamily: 'inherit', margin: 0, color: 'black', backgroundColor: 'white', padding: '10px', borderRadius: '4px'}}>{response.response}</pre>
+                <pre style={{whiteSpace: 'pre-wrap', wordWrap: 'break-word', fontFamily: 'inherit', margin: 0, color: 'black', backgroundColor: 'white', padding: '15px', borderRadius: '8px', border: '1px solid #e2e8f0', lineHeight: '1.6'}}>{response.response}</pre>
               </div>
             ) : (
               <div className={styles.responseText}>
-                <pre style={{whiteSpace: 'pre-wrap', wordWrap: 'break-word', fontFamily: 'inherit', margin: 0, color: 'black', backgroundColor: 'white', padding: '10px', borderRadius: '4px'}}>No response content received from backend. Backend may not be properly configured or have indexed data.</pre>
+                <pre style={{whiteSpace: 'pre-wrap', wordWrap: 'break-word', fontFamily: 'inherit', margin: 0, color: 'black', backgroundColor: 'white', padding: '15px', borderRadius: '8px', border: '1px solid #e2e8f0', lineHeight: '1.6'}}>No response content received from backend. Backend may not be properly configured or have indexed data.</pre>
               </div>
             )}
             {response.retrieved_chunks && response.retrieved_chunks.length > 0 && (

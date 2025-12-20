@@ -1,0 +1,349 @@
+2025-12-19 21:54:15,233 - INFO - Cohere client initialized successfully
+2025-12-19 21:54:15,788 - INFO - Qdrant client initialized successfully
+INFO:     Started server process [14124]
+INFO:     Waiting for application startup.
+INFO:     ASGI 'lifespan' protocol appears unsupported.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://127.0.0.1:8000 (Press CTRL+C to quit)
+ERROR:    Exception in ASGI application
+Traceback (most recent call last):
+  File "C:\Users\lenovo\AppData\Roaming\Python\Python312\site-packages\uvicorn\protocols\http\httptools_impl.py", line 409, in run_asgi
+    result = await app(  # type: ignore[func-returns-value]
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\lenovo\AppData\Roaming\Python\Python312\site-packages\uvicorn\middleware\proxy_headers.py", line 60, in __call__
+    return await self.app(scope, receive, send)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\lenovo\AppData\Roaming\Python\Python312\site-packages\fastapi\applications.py", line 1106, in __call__
+    await super().__call__(scope, receive, send)
+  File "C:\Users\lenovo\AppData\Roaming\Python\Python312\site-packages\starlette\applications.py", line 106, in __call__
+    self.middleware_stack = self.build_middleware_stack()
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\lenovo\AppData\Roaming\Python\Python312\site-packages\fastapi\applications.py", line 1014, in build_middleware_stack
+    for cls, options in reversed(middleware):
+        ^^^^^^^^^^^^
+ValueError: too many values to unpack (expected 2)
+INFO:     127.0.0.1:52215 - "GET /health HTTP/1.1" 500 Internal Server Error
+ERROR:    Exception in ASGI application
+Traceback (most recent call last):
+  File "C:\Users\lenovo\AppData\Roaming\Python\Python312\site-packages\uvicorn\protocols\http\httptools_impl.py", line 409, in run_asgi
+    result = await app(  # type: ignore[func-returns-value]
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\lenovo\AppData\Roaming\Python\Python312\site-packages\uvicorn\middleware\proxy_headers.py", line 60, in __call__
+    return await self.app(scope, receive, send)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\lenovo\AppData\Roaming\Python\Python312\site-packages\fastapi\applications.py", line 1106, in __call__
+    await super().__call__(scope, receive, send)
+  File "C:\Users\lenovo\AppData\Roaming\Python\Python312\site-packages\starlette\applications.py", line 106, in __call__
+    self.middleware_stack = self.build_middleware_stack()
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\lenovo\AppData\Roaming\Python\Python312\site-packages\fastapi\applications.py", line 1014, in build_middleware_stack
+    for cls, options in reversed(middleware):
+        ^^^^^^^^^^^^
+ValueError: too many values to unpack (expected 2)
+INFO:     127.0.0.1:52285 - "GET /health HTTP/1.1" 500 Internal Server Error
+ERROR:    Exception in ASGI application
+Traceback (most recent call last):
+  File "C:\Users\lenovo\AppData\Roaming\Python\Python312\site-packages\uvicorn\protocols\http\httptools_impl.py", line 409, in run_asgi
+    result = await app(  # type: ignore[func-returns-value]
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\lenovo\AppData\Roaming\Python\Python312\site-packages\uvicorn\middleware\proxy_headers.py", line 60, in __call__
+    return await self.app(scope, receive, send)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\lenovo\AppData\Roaming\Python\Python312\site-packages\fastapi\applications.py", line 1106, in __call__
+    await super().__call__(scope, receive, send)
+  File "C:\Users\lenovo\AppData\Roaming\Python\Python312\site-packages\starlette\applications.py", line 106, in __call__
+    self.middleware_stack = self.build_middleware_stack()
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\lenovo\AppData\Roaming\Python\Python312\site-packages\fastapi\applications.py", line 1014, in build_middleware_stack
+    for cls, options in reversed(middleware):
+        ^^^^^^^^^^^^
+ValueError: too many values to unpack (expected 2)
+INFO:     127.0.0.1:54993 - "GET /health HTTP/1.1" 500 Internal Server Error
+ERROR:    Exception in ASGI application
+Traceback (most recent call last):
+  File "C:\Users\lenovo\AppData\Roaming\Python\Python312\site-packages\uvicorn\protocols\http\httptools_impl.py", line 409, in run_asgi
+    result = await app(  # type: ignore[func-returns-value]
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\lenovo\AppData\Roaming\Python\Python312\site-packages\uvicorn\middleware\proxy_headers.py", line 60, in __call__
+    return await self.app(scope, receive, send)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\lenovo\AppData\Roaming\Python\Python312\site-packages\fastapi\applications.py", line 1106, in __call__
+    await super().__call__(scope, receive, send)
+  File "C:\Users\lenovo\AppData\Roaming\Python\Python312\site-packages\starlette\applications.py", line 106, in __call__
+    self.middleware_stack = self.build_middleware_stack()
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\lenovo\AppData\Roaming\Python\Python312\site-packages\fastapi\applications.py", line 1014, in build_middleware_stack
+    for cls, options in reversed(middleware):
+        ^^^^^^^^^^^^
+ValueError: too many values to unpack (expected 2)
+INFO:     127.0.0.1:55007 - "GET /health HTTP/1.1" 500 Internal Server Error
+ERROR:    Exception in ASGI application
+Traceback (most recent call last):
+  File "C:\Users\lenovo\AppData\Roaming\Python\Python312\site-packages\uvicorn\protocols\http\httptools_impl.py", line 409, in run_asgi
+    result = await app(  # type: ignore[func-returns-value]
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\lenovo\AppData\Roaming\Python\Python312\site-packages\uvicorn\middleware\proxy_headers.py", line 60, in __call__
+    return await self.app(scope, receive, send)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\lenovo\AppData\Roaming\Python\Python312\site-packages\fastapi\applications.py", line 1106, in __call__
+    await super().__call__(scope, receive, send)
+  File "C:\Users\lenovo\AppData\Roaming\Python\Python312\site-packages\starlette\applications.py", line 106, in __call__
+    self.middleware_stack = self.build_middleware_stack()
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\lenovo\AppData\Roaming\Python\Python312\site-packages\fastapi\applications.py", line 1014, in build_middleware_stack
+    for cls, options in reversed(middleware):
+        ^^^^^^^^^^^^
+ValueError: too many values to unpack (expected 2)
+INFO:     127.0.0.1:55008 - "GET /favicon.ico HTTP/1.1" 500 Internal Server Error
+ERROR:    Exception in ASGI application
+Traceback (most recent call last):
+  File "C:\Users\lenovo\AppData\Roaming\Python\Python312\site-packages\uvicorn\protocols\http\httptools_impl.py", line 409, in run_asgi
+    result = await app(  # type: ignore[func-returns-value]
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\lenovo\AppData\Roaming\Python\Python312\site-packages\uvicorn\middleware\proxy_headers.py", line 60, in __call__
+    return await self.app(scope, receive, send)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\lenovo\AppData\Roaming\Python\Python312\site-packages\fastapi\applications.py", line 1106, in __call__
+    await super().__call__(scope, receive, send)
+  File "C:\Users\lenovo\AppData\Roaming\Python\Python312\site-packages\starlette\applications.py", line 106, in __call__
+    self.middleware_stack = self.build_middleware_stack()
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\lenovo\AppData\Roaming\Python\Python312\site-packages\fastapi\applications.py", line 1014, in build_middleware_stack
+    for cls, options in reversed(middleware):
+        ^^^^^^^^^^^^
+ValueError: too many values to unpack (expected 2)
+INFO:     127.0.0.1:55010 - "GET / HTTP/1.1" 500 Internal Server Error
+ERROR:    Exception in ASGI application
+Traceback (most recent call last):
+  File "C:\Users\lenovo\AppData\Roaming\Python\Python312\site-packages\uvicorn\protocols\http\httptools_impl.py", line 409, in run_asgi
+    result = await app(  # type: ignore[func-returns-value]
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\lenovo\AppData\Roaming\Python\Python312\site-packages\uvicorn\middleware\proxy_headers.py", line 60, in __call__
+    return await self.app(scope, receive, send)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\lenovo\AppData\Roaming\Python\Python312\site-packages\fastapi\applications.py", line 1106, in __call__
+    await super().__call__(scope, receive, send)
+  File "C:\Users\lenovo\AppData\Roaming\Python\Python312\site-packages\starlette\applications.py", line 106, in __call__
+    self.middleware_stack = self.build_middleware_stack()
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\lenovo\AppData\Roaming\Python\Python312\site-packages\fastapi\applications.py", line 1014, in build_middleware_stack
+    for cls, options in reversed(middleware):
+        ^^^^^^^^^^^^
+ValueError: too many values to unpack (expected 2)
+INFO:     127.0.0.1:55014 - "GET /favicon.ico HTTP/1.1" 500 Internal Server Error
+ERROR:    Exception in ASGI application
+Traceback (most recent call last):
+  File "C:\Users\lenovo\AppData\Roaming\Python\Python312\site-packages\uvicorn\protocols\http\httptools_impl.py", line 409, in run_asgi
+    result = await app(  # type: ignore[func-returns-value]
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\lenovo\AppData\Roaming\Python\Python312\site-packages\uvicorn\middleware\proxy_headers.py", line 60, in __call__
+    return await self.app(scope, receive, send)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\lenovo\AppData\Roaming\Python\Python312\site-packages\fastapi\applications.py", line 1106, in __call__
+    await super().__call__(scope, receive, send)
+  File "C:\Users\lenovo\AppData\Roaming\Python\Python312\site-packages\starlette\applications.py", line 106, in __call__
+    self.middleware_stack = self.build_middleware_stack()
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\lenovo\AppData\Roaming\Python\Python312\site-packages\fastapi\applications.py", line 1014, in build_middleware_stack
+    for cls, options in reversed(middleware):
+        ^^^^^^^^^^^^
+ValueError: too many values to unpack (expected 2)
+INFO:     127.0.0.1:55100 - "GET / HTTP/1.1" 500 Internal Server Error
+ERROR:    Exception in ASGI application
+Traceback (most recent call last):
+  File "C:\Users\lenovo\AppData\Roaming\Python\Python312\site-packages\uvicorn\protocols\http\httptools_impl.py", line 409, in run_asgi
+    result = await app(  # type: ignore[func-returns-value]
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\lenovo\AppData\Roaming\Python\Python312\site-packages\uvicorn\middleware\proxy_headers.py", line 60, in __call__
+    return await self.app(scope, receive, send)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\lenovo\AppData\Roaming\Python\Python312\site-packages\fastapi\applications.py", line 1106, in __call__
+    await super().__call__(scope, receive, send)
+  File "C:\Users\lenovo\AppData\Roaming\Python\Python312\site-packages\starlette\applications.py", line 106, in __call__
+    self.middleware_stack = self.build_middleware_stack()
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\lenovo\AppData\Roaming\Python\Python312\site-packages\fastapi\applications.py", line 1014, in build_middleware_stack
+    for cls, options in reversed(middleware):
+        ^^^^^^^^^^^^
+ValueError: too many values to unpack (expected 2)
+INFO:     127.0.0.1:55101 - "GET /favicon.ico HTTP/1.1" 500 Internal Server Error
+ERROR:    Exception in ASGI application
+Traceback (most recent call last):
+  File "C:\Users\lenovo\AppData\Roaming\Python\Python312\site-packages\uvicorn\protocols\http\httptools_impl.py", line 409, in run_asgi
+    result = await app(  # type: ignore[func-returns-value]
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\lenovo\AppData\Roaming\Python\Python312\site-packages\uvicorn\middleware\proxy_headers.py", line 60, in __call__
+    return await self.app(scope, receive, send)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\lenovo\AppData\Roaming\Python\Python312\site-packages\fastapi\applications.py", line 1106, in __call__
+    await super().__call__(scope, receive, send)
+  File "C:\Users\lenovo\AppData\Roaming\Python\Python312\site-packages\starlette\applications.py", line 106, in __call__
+    for cls, options in reversed(middleware):
+                                ^^^^^^^^^^^^^^
+  File "C:\Users\lenovo\AppData\Roaming\Python\Python312\site-packages\fastapi\applications.py", line 1014, in build_middleware_stack
+    for cls, options in reversed(middleware):
+        ^^^^^^^^^^^^
+ValueError: too many values to unpack (expected 2)
+INFO:     127.0.0.1:56850 - "GET /health HTTP/1.1" 500 Internal Server Error
+ERROR:    Exception in ASGI application
+Traceback (most recent call last):
+  File "C:\Users\lenovo\AppData\Roaming\Python\Python312\site-packages\uvicorn\protocols\http\httptools_impl.py", line 409, in run_asgi
+    result = await app(  # type: ignore[func-returns-value]
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\lenovo\AppData\Roaming\Python\Python312\site-packages\uvicorn\middleware\proxy_headers.py", line 60, in __call__
+    return await self.app(scope, receive, send)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\lenovo\AppData\Roaming\Python\Python312\site-packages\fastapi\applications.py", line 1106, in __call__
+    await super().__call__(scope, receive, send)
+  File "C:\Users\lenovo\AppData\Roaming\Python\Python312\site-packages\starlette\applications.py", line 106, in __call__
+    for cls, options in reversed(middleware):
+                                ^^^^^^^^^^^^^^
+  File "C:\Users\lenovo\AppData\Roaming\Python\Python312\site-packages\fastapi\applications.py", line 1014, in build_middleware_stack
+    for cls, options in reversed(middleware):
+        ^^^^^^^^^^^^
+ValueError: too many values to unpack (expected 2)
+INFO:     127.0.0.1:56899 - "GET /health HTTP/1.1" 500 Internal Server Error
+ERROR:    Exception in ASGI application
+Traceback (most recent call last):
+  File "C:\Users\lenovo\AppData\Roaming\Python\Python312\site-packages\uvicorn\protocols\http\httptools_impl.py", line 409, in run_asgi
+    result = await app(  # type: ignore[func-returns-value]
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\lenovo\AppData\Roaming\Python\Python312\site-packages\uvicorn\middleware\proxy_headers.py", line 60, in __call__
+    return await self.app(scope, receive, send)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\lenovo\AppData\Roaming\Python\Python312\site-packages\fastapi\applications.py", line 1106, in __call__
+    await super().__call__(scope, receive, send)
+  File "C:\Users\lenovo\AppData\Roaming\Python\Python312\site-packages\starlette\applications.py", line 106, in __call__
+    for cls, options in reversed(middleware):
+                                ^^^^^^^^^^^^^^
+  File "C:\Users\lenovo\AppData\Roaming\Python\Python312\site-packages\fastapi\applications.py", line 1014, in build_middleware_stack
+    for cls, options in reversed(middleware):
+        ^^^^^^^^^^^^
+ValueError: too many values to unpack (expected 2)
+INFO:     127.0.0.1:56973 - "GET /health HTTP/1.1" 500 Internal Server Error
+ERROR:    Exception in ASGI application
+Traceback (most recent call last):
+  File "C:\Users\lenovo\AppData\Roaming\Python\Python312\site-packages\uvicorn\protocols\http\httptools_impl.py", line 409, in run_asgi
+    result = await app(  # type: ignore[func-returns-value]
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\lenovo\AppData\Roaming\Python\Python312\site-packages\uvicorn\middleware\proxy_headers.py", line 60, in __call__
+    return await self.app(scope, receive, send)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\lenovo\AppData\Roaming\Python\Python312\site-packages\fastapi\applications.py", line 1106, in __call__
+    await super().__call__(scope, receive, send)
+  File "C:\Users\lenovo\AppData\Roaming\Python\Python312\site-packages\starlette\applications.py", line 106, in __call__
+    for cls, options in reversed(middleware):
+                                ^^^^^^^^^^^^^^
+  File "C:\Users\lenovo\AppData\Roaming\Python\Python312\site-packages\fastapi\applications.py", line 1014, in build_middleware_stack
+    for cls, options in reversed(middleware):
+        ^^^^^^^^^^^^
+ValueError: too many values to unpack (expected 2)
+INFO:     127.0.0.1:57003 - "GET /docs HTTP/1.1" 500 Internal Server Error
+ERROR:    Exception in ASGI application
+Traceback (most recent call last):
+  File "C:\Users\lenovo\AppData\Roaming\Python\Python312\site-packages\uvicorn\protocols\http\httptools_impl.py", line 409, in run_asgi
+    result = await app(  # type: ignore[func-returns-value]
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\lenovo\AppData\Roaming\Python\Python312\site-packages\uvicorn\middleware\proxy_headers.py", line 60, in __call__
+    return await self.app(scope, receive, send)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\lenovo\AppData\Roaming\Python\Python312\site-packages\fastapi\applications.py", line 1106, in __call__
+    await super().__call__(scope, receive, send)
+  File "C:\Users\lenovo\AppData\Roaming\Python\Python312\site-packages\starlette\applications.py", line 106, in __call__
+    for cls, options in reversed(middleware):
+                                ^^^^^^^^^^^^^^
+  File "C:\Users\lenovo\AppData\Roaming\Python\Python312\site-packages\fastapi\applications.py", line 1014, in build_middleware_stack
+    for cls, options in reversed(middleware):
+        ^^^^^^^^^^^^
+ValueError: too many values to unpack (expected 2)
+INFO:     127.0.0.1:57143 - "GET /health HTTP/1.1" 500 Internal Server Error
+ERROR:    Exception in ASGI application
+Traceback (most recent call last):
+  File "C:\Users\lenovo\AppData\Roaming\Python\Python312\site-packages\uvicorn\protocols\http\httptools_impl.py", line 409, in run_asgi
+    result = await app(  # type: ignore[func-returns-value]
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\lenovo\AppData\Roaming\Python\Python312\site-packages\uvicorn\middleware\proxy_headers.py", line 60, in __call__
+    return await self.app(scope, receive, send)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\lenovo\AppData\Roaming\Python\Python312\site-packages\fastapi\applications.py", line 1106, in __call__
+    await super().__call__(scope, receive, send)
+  File "C:\Users\lenovo\AppData\Roaming\Python\Python312\site-packages\starlette\applications.py", line 106, in __call__
+    for cls, options in reversed(middleware):
+                                ^^^^^^^^^^^^^^
+  File "C:\Users\lenovo\AppData\Roaming\Python\Python312\site-packages\fastapi\applications.py", line 1014, in build_middleware_stack
+    for cls, options in reversed(middleware):
+        ^^^^^^^^^^^^
+ValueError: too many values to unpack (expected 2)
+INFO:     127.0.0.1:57186 - "GET /docs HTTP/1.1" 500 Internal Server Error
+ERROR:    Exception in ASGI application
+Traceback (most recent call last):
+  File "C:\Users\lenovo\AppData\Roaming\Python\Python312\site-packages\uvicorn\protocols\http\httptools_impl.py", line 409, in run_asgi
+    result = await app(  # type: ignore[func-returns-value]
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\lenovo\AppData\Roaming\Python\Python312\site-packages\uvicorn\middleware\proxy_headers.py", line 60, in __call__
+    return await self.app(scope, receive, send)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\lenovo\AppData\Roaming\Python\Python312\site-packages\fastapi\applications.py", line 1106, in __call__
+    await super().__call__(scope, receive, send)
+  File "C:\Users\lenovo\AppData\Roaming\Python\Python312\site-packages\starlette\applications.py", line 106, in __call__
+    for cls, options in reversed(middleware):
+                                ^^^^^^^^^^^^^^
+  File "C:\Users\lenovo\AppData\Roaming\Python\Python312\site-packages\fastapi\applications.py", line 1014, in build_middleware_stack
+    for cls, options in reversed(middleware):
+        ^^^^^^^^^^^^
+ValueError: too many values to unpack (expected 2)
+INFO:     127.0.0.1:57239 - "GET /health HTTP/1.1" 500 Internal Server Error
+ERROR:    Exception in ASGI application
+Traceback (most recent call last):
+  File "C:\Users\lenovo\AppData\Roaming\Python\Python312\site-packages\uvicorn\protocols\http\httptools_impl.py", line 409, in run_asgi
+    result = await app(  # type: ignore[func-returns-value]
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\lenovo\AppData\Roaming\Python\Python312\site-packages\uvicorn\middleware\proxy_headers.py", line 60, in __call__
+    return await self.app(scope, receive, send)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\lenovo\AppData\Roaming\Python\Python312\site-packages\fastapi\applications.py", line 1106, in __call__
+    await super().__call__(scope, receive, send)
+  File "C:\Users\lenovo\AppData\Roaming\Python\Python312\site-packages\starlette\applications.py", line 106, in __call__
+    for cls, options in reversed(middleware):
+                                ^^^^^^^^^^^^^^
+  File "C:\Users\lenovo\AppData\Roaming\Python\Python312\site-packages\fastapi\applications.py", line 1014, in build_middleware_stack
+    for cls, options in reversed(middleware):
+        ^^^^^^^^^^^^
+ValueError: too many values to unpack (expected 2)
+INFO:     127.0.0.1:57268 - "POST /api/v1/chat HTTP/1.1" 500 Internal Server Error
+ERROR:    Exception in ASGI application
+Traceback (most recent call last):
+  File "C:\Users\lenovo\AppData\Roaming\Python\Python312\site-packages\uvicorn\protocols\http\httptools_impl.py", line 409, in run_asgi
+    result = await app(  # type: ignore[func-returns-value]
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\lenovo\AppData\Roaming\Python\Python312\site-packages\uvicorn\middleware\proxy_headers.py", line 60, in __call__
+    return await self.app(scope, receive, send)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\lenovo\AppData\Roaming\Python\Python312\site-packages\fastapi\applications.py", line 1106, in __call__
+    await super().__call__(scope, receive, send)
+  File "C:\Users\lenovo\AppData\Roaming\Python\Python312\site-packages\starlette\applications.py", line 106, in __call__
+    for cls, options in reversed(middleware):
+                                ^^^^^^^^^^^^^^
+  File "C:\Users\lenovo\AppData\Roaming\Python\Python312\site-packages\fastapi\applications.py", line 1014, in build_middleware_stack
+    for cls, options in reversed(middleware):
+        ^^^^^^^^^^^^
+ValueError: too many values to unpack (expected 2)
+INFO:     127.0.0.1:57301 - "GET /health HTTP/1.1" 500 Internal Server Error
+ERROR:    Exception in ASGI application
+Traceback (most recent call last):
+  File "C:\Users\lenovo\AppData\Roaming\Python\Python312\site-packages\uvicorn\protocols\http\httptools_impl.py", line 409, in run_asgi
+    result = await app(  # type: ignore[func-returns-value]
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\lenovo\AppData\Roaming\Python\Python312\site-packages\uvicorn\middleware\proxy_headers.py", line 60, in __call__
+    return await self.app(scope, receive, send)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\lenovo\AppData\Roaming\Python\Python312\site-packages\fastapi\applications.py", line 1106, in __call__
+    await super().__call__(scope, receive, send)
+  File "C:\Users\lenovo\AppData\Roaming\Python\Python312\site-packages\starlette\applications.py", line 106, in __call__
+    for cls, options in reversed(middleware):
+                                ^^^^^^^^^^^^^^
+  File "C:\Users\lenovo\AppData\Roaming\Python\Python312\site-packages\fastapi\applications.py", line 1014, in build_middleware_stack
+    for cls, options in reversed(middleware):
+        ^^^^^^^^^^^^
+ValueError: too many values to unpack (expected 2)
+INFO:     127.0.0.1:57345 - "GET /health HTTP/1.1" 500 Internal Server Error

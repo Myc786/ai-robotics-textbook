@@ -1,0 +1,71 @@
+# API Contract: Frontend-Backend Communication for RAG Chatbot
+
+## Endpoints
+
+### POST /chat
+**Description**: Send a user question to the backend and receive an answer with sources
+
+#### Request
+```json
+{
+  "question": "string (required) - The user's question about book content"
+}
+```
+
+#### Response (200 OK)
+```json
+{
+  "answer": "string - The generated answer based on retrieved content",
+  "sources": "array of strings - List of source URLs used in generating the answer"
+}
+```
+
+#### Error Responses
+- **400 Bad Request**: Invalid request parameters or empty question
+- **500 Internal Server Error**: Service unavailable, API errors, or retrieval failures
+
+#### Example Request
+```json
+{
+  "question": "Explain the concept of backpropagation in neural networks"
+}
+```
+
+#### Example Response
+```json
+{
+  "answer": "Backpropagation is a supervised learning algorithm used to train neural networks by computing the gradient of the loss function with respect to each weight in the network...",
+  "sources": [
+    "https://example.com/book/chapter4",
+    "https://example.com/book/chapter6"
+  ]
+}
+```
+
+## Frontend Events
+
+### Text Selection Event
+**Description**: Triggered when user selects text on the page
+
+#### Event Data
+```json
+{
+  "selectedText": "string - The text that was selected by the user",
+  "position": {
+    "x": "number - X coordinate for button positioning",
+    "y": "number - Y coordinate for button positioning"
+  }
+}
+```
+
+### Chat State Change Event
+**Description**: Triggered when chat interface state changes
+
+#### Event Data
+```json
+{
+  "isOpen": "boolean - Whether the chat window is open",
+  "isLoading": "boolean - Whether a response is loading",
+  "messages": "array of messages in the chat"
+}
+```

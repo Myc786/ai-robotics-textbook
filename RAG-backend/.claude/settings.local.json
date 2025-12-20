@@ -1,16 +1,30 @@
 {
   "permissions": {
     "allow": [
+      "Bash(uv run python agent.py)",
+      "Bash(sort -t- -k1,1nr)",
       "Bash(git fetch --all --prune)",
-      "Bash(python -c \"from src.models.database import Base; print(''SQLAlchemy models loaded successfully'')\")",
-      "Bash(set TESTING=1)",
-      "Bash(python -m pytest tests/unit/ -v)",
-      "Bash(python -m pytest:*)",
-      "Bash(git rev-parse --git-dir)",
-      "Bash(python -c \"import src.main; print(''Application imports successfully'')\")",
-      "Bash(python -c \"import src.models.document; print(''Models imported successfully'')\")",
-      "Bash(claude mcp remove github)",
-      "Bash(gh repo create RAG-Backend --public --description \"RAG Backend for textbook chatbot application\" --confirm)"
-    ]
+      "Bash(python main.py status)",
+      "Bash(echo $TARGET_URL)",
+      "Bash(python test_retrieval_basic.py)",
+      "Bash(python test_retrieval.py)",
+      "Bash(curl -X GET http://127.0.0.1:8001/health)",
+      "Bash(curl -X GET http://127.0.0.1:8080/health)",
+      "Bash(dir /s *.py)",
+      "Bash(findstr -i main)",
+      "Bash(dir /s)",
+      "Bash(dir myapp)",
+      "Bash(dir src)",
+      "Bash(python main.py)",
+      "Bash(curl -X POST http://localhost:8000/api/v1/chat -H \"Content-Type: application/json\" -d '{\"\"query\"\": \"\"Hello\"\"}')",
+      "Bash(python main.py index --target-url https://ai-robotics-textbook.vercel.app)",
+      "Bash(curl -X POST http://localhost:8000/api/v1/chat -H \"Content-Type: application/json\" -d '{\"\"query\"\": \"\"What is Physical AI?\"\"}')",
+      "Bash(git add .)"
+    ],
+    "deny": [
+      "Bash(.specify/scripts/powershell/create-new-feature.ps1 *)",
+      "Bash(python -c :*)"
+    ],
+    "ask": []
   }
 }

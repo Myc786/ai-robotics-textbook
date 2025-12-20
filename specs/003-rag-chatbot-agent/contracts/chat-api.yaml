@@ -1,0 +1,43 @@
+# API Contract: RAG Chatbot Agent
+
+## Endpoints
+
+### POST /chat
+**Description**: Process a user question and return an answer based on retrieved book content
+
+#### Request
+```json
+{
+  "question": "string (required) - The user's question about book content"
+}
+```
+
+#### Response (200 OK)
+```json
+{
+  "answer": "string - The generated answer based on retrieved content",
+  "sources": "array of strings - List of source URLs used in generating the answer"
+}
+```
+
+#### Error Responses
+- **400 Bad Request**: Invalid request parameters or empty question
+- **500 Internal Server Error**: Service unavailable, API errors, or retrieval failures
+
+#### Example Request
+```json
+{
+  "question": "Explain the concept of backpropagation in neural networks"
+}
+```
+
+#### Example Response
+```json
+{
+  "answer": "Backpropagation is a supervised learning algorithm used to train neural networks by computing the gradient of the loss function with respect to each weight in the network...",
+  "sources": [
+    "https://example.com/book/chapter4",
+    "https://example.com/book/chapter6"
+  ]
+}
+```

@@ -1,0 +1,79 @@
+# API Contract: FastAPI Backend with OpenAI Agent and Qdrant Retrieval
+
+**Feature**: 005-fastapi-openai-qdrant
+**Created**: 2025-12-19
+**Status**: Complete
+
+## Endpoints
+
+### POST /chat
+
+**Description**: Accepts a user question and returns an AI-generated answer with source citations.
+
+**Request**:
+- Method: POST
+- Path: /chat
+- Content-Type: application/json
+
+**Request Body**:
+```json
+{
+  "question": "string (required)"
+}
+```
+
+**Request Validation**:
+- `question` must be a non-empty string
+- `question` must be between 1 and 1000 characters
+
+**Response**:
+- Status: 200 OK
+- Content-Type: application/json
+
+**Response Body**:
+```json
+{
+  "answer": "string (required)",
+  "sources": ["string (required)"]
+}
+```
+
+**Response Validation**:
+- `answer` must be a non-empty string
+- `sources` must be an array of valid URLs or source identifiers
+- `sources` array must contain at least one element
+
+**Error Responses**:
+- 400 Bad Request: Invalid request body format
+- 422 Unprocessable Entity: Validation error in request body
+- 500 Internal Server Error: Server-side processing error
+
+**Example Request**:
+```json
+{
+  "question": "What are the key principles of humanoid robotics?"
+}
+```
+
+**Example Response**:
+```json
+{
+  "answer": "The key principles of humanoid robotics include: 1) Biomechanical design that mimics human movement patterns, 2) Advanced control systems for balance and coordination, 3) Sensory integration for environmental awareness, and 4) Cognitive systems for decision-making and interaction.",
+  "sources": [
+    "https://example.com/docs/basics-of-humanoid-robotics",
+    "https://example.com/docs/advanced-control-systems"
+  ]
+}
+```
+
+## Security Requirements
+
+- All API keys must be stored in environment variables
+- No sensitive information should be logged
+- Request validation must prevent injection attacks
+
+## Performance Requirements
+
+- API response time should be under 10 seconds for standard queries
+- System should handle at least 100 concurrent requests
+- Error rate should be less than 1%

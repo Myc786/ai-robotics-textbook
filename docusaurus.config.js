@@ -55,7 +55,7 @@ const config = {
 
   // Expose environment variables to client via customFields
   customFields: {
-    NEXT_PUBLIC_RAG_BACKEND_URL: process.env.NEXT_PUBLIC_RAG_BACKEND_URL || 'https://rag-chatbot-2ufj.onrender.com',
+    NEXT_PUBLIC_RAG_BACKEND_URL: process.env.NEXT_PUBLIC_RAG_BACKEND_URL || 'http://localhost:8000',
   },
 
 

@@ -23,7 +23,15 @@
     ],
     "deny": [
       "Bash(.specify/scripts/powershell/create-new-feature.ps1 *)",
-      "Bash(python -c :*)"
+      "Bash(python -c :*)",
+      "Bash(:*)",  // Added general prefix matching for any command starting with colon
+      "Bash(*.env*)", // Additional pattern to prevent accessing .env files
+      "Bash(*.secret*)", // Additional pattern to prevent accessing secret files
+      "Bash(*.password*)", // Additional pattern to prevent accessing password files
+      "Bash(*.token*)", // Additional pattern to prevent accessing token files
+      "Bash(*.key*)", // Additional pattern to prevent accessing key files
+      "Bash(*.pem*)", // Additional pattern to prevent accessing PEM files
+      "Bash(*.p12*)" // Additional pattern to prevent accessing P12 files
     ],
     "ask": []
   }

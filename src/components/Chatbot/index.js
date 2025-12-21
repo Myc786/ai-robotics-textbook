@@ -24,7 +24,7 @@ function Chatbot() {
         (typeof window !== 'undefined' && window?.env?.NEXT_PUBLIC_RAG_BACKEND_URL) ||
         (typeof window !== 'undefined' && window?.NEXT_PUBLIC_RAG_BACKEND_URL) ||
         document?.documentElement?.getAttribute('data-rag-backend-url') ||
-        'http://localhost:8080';
+        'https://muhammadyounis-rag.hf.space/';
       const RAG_BACKEND_URL = `${backendBaseUrl}/api/v1/chat`;
 
       // Note: For GitHub Pages deployment, you'll need to host the RAG backend separately

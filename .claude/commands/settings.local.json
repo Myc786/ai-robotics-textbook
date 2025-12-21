@@ -1,0 +1,22 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash",
+      "Bash(npm run:*)",
+      "Bash(npm install:*)",
+      "Bash(npx:*)",
+      "Bash(dir:*)",
+      "Bash(curl:*)",
+      "Bash(python:*)",
+      "Bash(git:*)"
+    ],
+    "ask": [
+      "Bash(python -c:*)"
+    ],
+    "deny": [
+      "Bash(taskkill:*)",
+      "Bash(net stop:*)",
+      "Bash(powershell Stop-Process:*)"
+    ]
+  }
+}

@@ -24,7 +24,7 @@ function Chatbot() {
         (typeof window !== 'undefined' && window?.env?.NEXT_PUBLIC_RAG_BACKEND_URL) ||
         (typeof window !== 'undefined' && window?.NEXT_PUBLIC_RAG_BACKEND_URL) ||
         document?.documentElement?.getAttribute('data-rag-backend-url') ||
-        'https://muhammadyounis-rag.hf.space/';
+        'https://muhammadyounis-chatbot.hf.space';
       const RAG_BACKEND_URL = `${backendBaseUrl}/api/v1/chat`;
 
       // Note: For GitHub Pages deployment, you'll need to host the RAG backend separately
@@ -125,11 +125,11 @@ function Chatbot() {
           <div className={styles.responseContent}>
             {response.response ? (
               <div className={styles.responseText}>
-                <pre style={{whiteSpace: 'pre-wrap', wordWrap: 'break-word', fontFamily: 'inherit', margin: 0, color: 'black', backgroundColor: 'white', padding: '15px', borderRadius: '8px', border: '1px solid #e2e8f0', lineHeight: '1.6'}}>{response.response}</pre>
+                <pre className={styles.responseTextPre}>{response.response}</pre>
               </div>
             ) : (
               <div className={styles.responseText}>
-                <pre style={{whiteSpace: 'pre-wrap', wordWrap: 'break-word', fontFamily: 'inherit', margin: 0, color: 'black', backgroundColor: 'white', padding: '15px', borderRadius: '8px', border: '1px solid #e2e8f0', lineHeight: '1.6'}}>No response content received from backend. Backend may not be properly configured or have indexed data.</pre>
+                <pre className={styles.responseTextPre}>No response content received from backend. Backend may not be properly configured or have indexed data.</pre>
               </div>
             )}
             {response.retrieved_chunks && response.retrieved_chunks.length > 0 && (

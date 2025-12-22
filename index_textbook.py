@@ -48,8 +48,9 @@ async def index_textbook_content():
 
         # Upload to the backend
         try:
+            backend_url = os.getenv('RAG_BACKEND_URL', 'https://muhammadyounis-chatbot.hf.space')
             response = requests.post(
-                "http://localhost:8000/api/v1/documents",
+                f"{backend_url}/api/v1/documents",
                 json=document_data,
                 headers={"Content-Type": "application/json"},
                 timeout=30  # 30 second timeout

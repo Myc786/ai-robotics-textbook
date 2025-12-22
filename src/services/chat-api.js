@@ -14,7 +14,7 @@ class ChatApiService {
    */
   async sendQuestion(question) {
     try {
-      const response = await fetch(`${this.backendUrl}/chat`, {
+      const response = await fetch(`${this.backendUrl}/api/v1/chat`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -41,7 +41,7 @@ class ChatApiService {
   async testConnection() {
     try {
       // Try to access the health endpoint or just make a simple request
-      const response = await fetch(`${this.backendUrl}/health`);
+      const response = await fetch(`${this.backendUrl}/api/v1/health`);
       return response.ok;
     } catch (error) {
       console.error('Error testing backend connection:', error);

@@ -23,7 +23,7 @@ const BookChatbot = ({ backendUrl }) => {
     (typeof window !== 'undefined' && window?.env?.NEXT_PUBLIC_RAG_BACKEND_URL) ||
     (typeof window !== 'undefined' && window?.NEXT_PUBLIC_RAG_BACKEND_URL) ||
     document?.documentElement?.getAttribute('data-rag-backend-url') ||
-    '/api';
+    'https://muhammadyounis-chatbot.hf.space';
 
   const chatApiService = new ChatApiService(resolvedBackendUrl);
 

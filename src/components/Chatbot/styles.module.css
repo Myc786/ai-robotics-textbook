@@ -132,7 +132,7 @@
 
 .responseText {
   line-height: 1.6;
-  color: #1e293b;
+  color: black;
   font-size: 1rem;
   padding: 1rem;
   border-radius: 6px;
@@ -149,6 +149,19 @@
 
 .responseText p:last-child {
   margin-bottom: 0;
+}
+
+.responseTextPre {
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  font-family: inherit;
+  margin: 0;
+  color: black;
+  background-color: white;
+  padding: 15px;
+  border-radius: 8px;
+  border: 1px solid #e2e8f0;
+  line-height: 1.6;
 }
 
 .info {

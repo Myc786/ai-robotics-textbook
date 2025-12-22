@@ -7,7 +7,10 @@
       "Bash(netstat -ano)",
       "Bash(findstr :3000)",
       "Bash(taskkill /PID 10940 /F)",
-      "Bash(git add -A)"
+      "Bash(git add -A)",
+      "Bash(dir)",
+      "Bash(dir rag-backend)",
+      "Bash(pip install -e .)"
     ]
   }
 }

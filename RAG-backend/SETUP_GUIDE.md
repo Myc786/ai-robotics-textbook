@@ -40,7 +40,7 @@ The frontend expects to connect to the backend at the configured endpoint. Updat
 
 ```js
 customFields: {
-  NEXT_PUBLIC_RAG_BACKEND_URL: process.env.NEXT_PUBLIC_RAG_BACKEND_URL || 'http://localhost:8000',
+  NEXT_PUBLIC_RAG_BACKEND_URL: process.env.NEXT_PUBLIC_RAG_BACKEND_URL || 'https://muhammadyounis-chatbot.hf.space',
 },
 ```
 

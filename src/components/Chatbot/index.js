@@ -124,13 +124,9 @@ function Chatbot() {
         <div className={styles.responseContainer}>
           <div className={styles.responseContent}>
             {response.response ? (
-              <div className={styles.responseText}>
-                <pre className={styles.responseTextPre}>{response.response}</pre>
-              </div>
+              <pre className={styles.responseText}>{response.response}</pre>
             ) : (
-              <div className={styles.responseText}>
-                <pre className={styles.responseTextPre}>No response content received from backend. Backend may not be properly configured or have indexed data.</pre>
-              </div>
+              <pre className={styles.responseText}>No response content received from backend. Backend may not be properly configured or have indexed data.</pre>
             )}
             {response.retrieved_chunks && response.retrieved_chunks.length > 0 && (
               <div className={styles.sourcesSection}>

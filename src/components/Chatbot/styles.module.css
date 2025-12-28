@@ -106,7 +106,7 @@
 .responseContainer {
   margin-top: 1.5rem;
   border-radius: 8px;
-  background: #f8fafc;
+  background: #ffffff;
   border: 1px solid #e2e8f0;
   overflow: hidden;
 }
@@ -132,7 +132,7 @@
 
 .responseText {
   line-height: 1.6;
-  color: black;
+  color: #1e293b;
   font-size: 1rem;
   padding: 1rem;
   border-radius: 6px;
@@ -161,6 +161,14 @@
   background: #f8fafc;
   border: 1px solid #e2e8f0;
   color: #64748b;
+}
+
+.welcomeMessage {
+  color: #475569;
+  font-size: 1rem;
+  text-align: center;
+  margin: 0;
+  padding: 0.5rem;
 }
 
 .sourcesSection {
@@ -227,15 +235,6 @@
 .performanceInfo small {
   color: #64748b;
   font-size: 0.85rem;
-}
-
-.error {
-  color: #dc2626;
-  margin-top: 1.5rem;
-  padding: 1rem;
-  border-radius: 8px;
-  background: #fef2f2;
-  border: 1px solid #fecaca;
 }
 
 /* Responsive design */

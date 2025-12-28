@@ -16,15 +16,14 @@ function Chatbot() {
     setError(null);
 
     try {
-      // Use environment variable for backend URL
-      // This allows configuration via NEXT_PUBLIC_RAG_BACKEND_URL
-      // Use multiple fallbacks to ensure availability in different environments
+      // Use environment variable for backend URL with fallback chain
+      // Priority: 1. Docusaurus customFields, 2. window.env, 3. data attribute, 4. default
       const backendBaseUrl =
         siteConfig?.customFields?.NEXT_PUBLIC_RAG_BACKEND_URL ||
         (typeof window !== 'undefined' && window?.env?.NEXT_PUBLIC_RAG_BACKEND_URL) ||
         (typeof window !== 'undefined' && window?.NEXT_PUBLIC_RAG_BACKEND_URL) ||
         document?.documentElement?.getAttribute('data-rag-backend-url') ||
-        'https://muhammadyounis-chatbot.hf.space';
+        'http://localhost:8000';
       const RAG_BACKEND_URL = `${backendBaseUrl}/api/v1/chat`;
 
       // Note: For GitHub Pages deployment, you'll need to host the RAG backend separately
@@ -36,12 +35,18 @@ function Chatbot() {
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ query }),
+        body: JSON.stringify({ query_text: query, mode: 'global' }),
       });
 
       if (!res.ok) {
-        const errorData = await res.json();
-        throw new Error(errorData.detail || `HTTP error! status: ${res.status}`);
+        let errorMessage = `HTTP error! status: ${res.status}`;
+        try {
+          const errorData = await res.json();
+          errorMessage = errorData.detail || errorMessage;
+        } catch {
+          // Response was not valid JSON, use default error message
+        }
+        throw new Error(errorMessage);
       }
 
       const data = await res.json();
@@ -54,8 +59,9 @@ function Chatbot() {
         setError(
           'The RAG backend is not accessible. This is typically caused by one of the following:\n\n' +
           '1. The backend server is not running. To start it, run in a separate terminal:\n' +
-          '   cd RAG-backend\n' +
-          '   poetry run uvicorn main:app --host 0.0.0.0 --port 8000\n\n' +
+          '   cd rag-backend\n' +
+          '   pip install -r requirements.txt\n' +
+          '   python start_server.py\n\n' +
           '2. CORS restrictions between frontend and backend. Make sure the backend allows requests ' +
           'from the frontend origin.\n\n' +
           '3. The backend is running but on a different port. Verify it\'s on port 8000.\n\n' +
@@ -64,8 +70,6 @@ function Chatbot() {
       } else if (err.message.includes('404') || err.message.includes('not found')) {
         setError(
           'Chat API endpoint not found. The backend might not be properly deployed or the API endpoint may have changed.\n\n' +
-          'Current backend URL: ' + backendBaseUrl + '\n' +
-          'Expected endpoint: ' + RAG_BACKEND_URL + '\n\n' +
           'Please verify that the backend service is properly deployed and accessible.'
         );
       } else if (err.message.includes('500') || err.message.includes('error')) {
@@ -104,12 +108,10 @@ function Chatbot() {
         </button>
       </form>
 
-      {!response && !error && (
+      {!response && !error && !loading && (
         <div className={styles.info}>
-          <p style={{color: '#64748b', fontStyle: 'italic', textAlign: 'center', padding: '1rem', marginTop: '1rem', backgroundColor: '#f8fafc', borderRadius: '8px', border: '1px solid #e2e8f0'}}>
-            Note: This chatbot connects to a RAG (Retrieval-Augmented Generation) backend that answers questions based on the textbook content.
-            The backend requires proper configuration with API keys and indexed content to function.
-            If you see error messages, please check the backend setup instructions.
+          <p className={styles.welcomeMessage}>
+            I'll answer your question based on the provided documents. Go ahead and ask your question about Physical AI.
           </p>
         </div>
       )}
@@ -134,14 +136,14 @@ function Chatbot() {
                 <div className={styles.sourcesList}>
                   {response.retrieved_chunks.slice(0, 3).map((chunk, index) => (
                     <div key={index} className={styles.sourceItem}>
-                      <span className={styles.sourceFile}>{chunk.chapter || chunk.url || `Source ${index + 1}`}</span>
-                      <span className={styles.sourceScore}>{chunk.score?.toFixed(3) || 'N/A'}</span>
+                      <span className={styles.sourceFile}>{chunk.chapter_id || chunk.section_id || `Chunk ${index + 1}`}</span>
+                      <span className={styles.sourceScore}>{chunk.similarity_score?.toFixed(3) || 'N/A'}</span>
                     </div>
                   ))}
                 </div>
               </div>
             )}
-            {response.execution_time_ms && (
+            {(response.execution_time_ms !== undefined && response.execution_time_ms !== null) && (
               <div className={styles.performanceInfo}>
                 <small>Response time: {response.execution_time_ms}ms</small>
               </div>

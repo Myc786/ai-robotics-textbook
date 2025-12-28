@@ -14,8 +14,8 @@ class Settings(BaseSettings):
     qdrant_api_key: str
     qdrant_collection_name: str = "RAG_embeddings"
 
-    # Database settings
-    database_url: str
+    # Database settings (optional - app works without it)
+    database_url: Optional[str] = None
 
     # Open Router settings
     openrouter_api_key: Optional[str] = None

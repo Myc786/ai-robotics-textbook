@@ -1,4 +1,5 @@
 # Hugging Face Spaces Dockerfile for RAG Chatbot Backend
+# Build version: 2 - Force cache invalidation
 FROM python:3.11-slim
 
 # Set working directory

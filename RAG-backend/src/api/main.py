@@ -51,6 +51,8 @@ app.add_middleware(
         "http://127.0.0.1:8080",
         "https://ai-robotics-textbook.vercel.app",  # Production Vercel URL
         "https://*.vercel.app",       # All Vercel preview deployments
+        "https://*.hf.space",         # Hugging Face Spaces
+        "https://*.github.io",        # GitHub Pages
     ],
     allow_credentials=True,
     allow_methods=["*"],

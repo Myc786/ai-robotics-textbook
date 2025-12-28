@@ -57,7 +57,7 @@ const config = {
   // For production, set NEXT_PUBLIC_RAG_BACKEND_URL to your Hugging Face Space URL
   // Format: https://USERNAME-SPACE_NAME.hf.space
   customFields: {
-    NEXT_PUBLIC_RAG_BACKEND_URL: process.env.NEXT_PUBLIC_RAG_BACKEND_URL || 'https://myc786-rag-chatbot-backend.hf.space',
+    NEXT_PUBLIC_RAG_BACKEND_URL: process.env.NEXT_PUBLIC_RAG_BACKEND_URL || 'https://muhammadyounis-rag-chatbot-backend.hf.space',
   },
 
 
